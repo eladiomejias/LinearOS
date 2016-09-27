@@ -1,6 +1,4 @@
 var angular = require('angular');
-
-
 var app = angular.module('myApp',['ngMaterial', 'ngMessages', 'ui.router']);
 
 

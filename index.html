@@ -8,11 +8,14 @@
     <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
 
 </head>
-<body ng-app="myApp" ng-cloak layout="column">
+<body ng-app="myApp" ng-cloak ng-controller="desktopController" layout="column">
     <md-button>Simple</md-button>
 
+    <p>{{hello}}</p>
+    
     
     <script src="public/js/vendor.bundle.js"></script>
     <script src="public/js/app.bundle.js"></script>
+    <script src="app/controllers/desktopController.js"></script>
 </body>
 </html>

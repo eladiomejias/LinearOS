@@ -3,8 +3,6 @@ webpackJsonp([0],[
 /***/ function(module, exports, __webpack_require__) {
 
 	var angular = __webpack_require__(1);
-
-
 	var app = angular.module('myApp',['ngMaterial', 'ngMessages', 'ui.router']);
 
 
