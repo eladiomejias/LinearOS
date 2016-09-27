@@ -8,20 +8,32 @@
     <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
     <link rel="stylesheet" href="public/css/iconfont/material-icons.css">
     <link rel="stylesheet" href="public/css/jquery-ui.css">
+    <link rel="stylesheet" href="public/css/style.css">
+
 
 </head>
 <body ng-app="myApp" ng-cloak ng-controller="desktopController" layout="column">
-    <md-button>Simple</md-button>
-
-    <p>{{hello}}</p>
     
+    
+    <div layout="row" layout-align="start end" id="bar-container">
+      <div id="bar" flex="100" layout='row'>
+          
+          <div id="icon-menu" flex="5" layout="row" layout-align="center center">
+            <md-button class="md-icon-button icon-desktop" aria-label="Favorite"><md-icon class="material-icons md-light md-48"> apps </md-icon></md-button>          
+          </div>
+          
+          <span flex="85"></span>
+          <p flex id="bar-right">Hola</p>
+          
+      </div>
+      
+    </div>
+
          
-<div id="draggable" class="ui-widget-content">
-     <div class="title-window-top">Files<div class="btn-close"><i class="material-icons">close</i></div></div>
-</div>
+    <div id="draggable" class="ui-widget-content">
+         <div class="title-window-top">Files<div class="btn-close"><i class="material-icons">close</i></div></div>
+    </div>
 
-<i class="material-icons">build</i>
-    
     
     <script src="public/js/vendor.bundle.js"></script>
     <script src="public/js/app.bundle.js"></script>

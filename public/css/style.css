@@ -1,1 +1,42 @@
 /* Desktop Styles */
+
+body, html{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: #222;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background: #4776E6; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #4776E6 , #8E54E9); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #4776E6 , #8E54E9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#bar-container{
+    height: 100%;
+}
+
+#bar{
+    height: 7vh;
+    background: rgba(0,0,0,0.2);
+    width: 100%;
+}
+
+.ui-widget-content{
+    position: absolute;
+    min-width: 200px;
+    min-height: 200px;
+}
+
+#icon-menu{
+    width: 100px;
+    background: white;
+    height: 100%;
+    min-width: 100px;
+    
+}
+
+#bar-right{
+    min-width: 150px;
+}
+    
