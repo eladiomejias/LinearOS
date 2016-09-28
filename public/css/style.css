@@ -8,8 +8,17 @@ body, html{
     overflow-x: hidden;
     overflow-y: hidden;
     background: #4776E6; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #4776E6 , #8E54E9); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #4776E6 , #8E54E9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    /* Color Gradient */
+    
+   /* background: -webkit-linear-gradient(to left, #4776E6 , #8E54E9); /* Chrome 10-25, Safari 5.1-6 */
+   /* background: linear-gradient(to left, #4776E6 , #8E54E9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    /* Wallpaper */
+    background: url("../img/material-wallpaper.png");
+    background-size: cover;
+    
+    
 }
 
 #bar-container{
@@ -17,8 +26,8 @@ body, html{
 }
 
 #bar{
-    height: 45px;
-    background: rgba(0,0,0,0.2);
+    height: 55px;
+    /*background: rgba(0,0,0,0.2);*/
     width: 100%;
 }
 
@@ -26,17 +35,69 @@ body, html{
     position: absolute;
     min-width: 200px;
     min-height: 200px;
+    border: 0px solid white;
 }
 
 #icon-menu{
-    width: 100px;
-    background: white;
+    width: 70px;
+   /* background: #0F1021; */
     height: 100%;
-    min-width: 100px;
+    min-width: 70px;
     
 }
 
-#bar-right{
-    min-width: 150px;
+#icon-menu .material-icons, .whiter{
+    color: white;
 }
-    
+
+#bar-right{
+    min-width: 214px;
+    width: 210px;
+    height: 100%;
+    padding-right: 7px;
+}
+
+#bar-right .md-button.md-icon-button {
+    width: 30px !important;
+}
+
+#time span{
+    font-size: 0.9rem;
+    font-size: 0.8em;
+    /* padding: 0px 7px; */
+    padding-left: 5px;
+
+}
+.container-icon{
+    background: rgba(16, 16, 16, 0.77);
+    padding: 1px;
+}
+
+#bar-right .container-icon{ background: rgb(24, 29, 30);}
+
+.title-window-top{
+  height: 52px;  
+  width: 100%;
+  background-color: #0881A3;
+
+}
+
+#close-btn{
+    height: 40px;
+    width: 40px;
+}
+
+.container-id{
+    width: 50px;
+}
+
+.title-window{
+    min-width: 150px; 
+    max-width: 300px;
+    color: white;
+}
+
+.title-window span{
+    font-size: 1.1em;
+    letter-spacing: 0.05em;
+}

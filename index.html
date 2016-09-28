@@ -19,19 +19,42 @@
       <div id="bar" flex="100" layout='row'>
           
           <div id="icon-menu" flex="5" layout="row" layout-align="center center">
-            <md-button class="md-icon-button icon-desktop" aria-label="Favorite"><md-icon class="material-icons md-light md-48"> apps </md-icon></md-button>          
+            <div class="container-icon md-whiteframe-2dp"><md-button class="md-icon-button icon-desktop" aria-label="Favorite" md-ink-ripple="#FFF"><md-icon class="material-icons md-light md-48"> apps </md-icon></md-button></div>          
           </div>
           
+          <!-- Space -->
           <span flex="85"></span>
-          <p flex id="bar-right">Hola</p>
+          <!-- End space -->
+          
+          <!-- Flex del espacio restante / afectado con min-width -->
+          <div flex id="bar-right" layout="row" layout-align="center center">
+            <div class="container-icon md-whiteframe-2dp" flex="100" layout="row" layout-align="">
+                <div id="time" class="whiter" flex="30" layout-align="center center" layout="row"><span>12:32 PM</span></div>
+                <md-button class="md-icon-button icon-desktop " md-no-ink="true" aria-label="Favorite" md-ink-ripple="#FFF"><md-icon class="material-icons md-light md-48 whiter"> today </md-icon></md-button>
+                <md-button class="md-icon-button icon-desktop " md-no-ink="true" aria-label="Favorite" md-ink-ripple="#FFF"><md-icon class="material-icons md-light md-48 whiter"> battery_full </md-icon></md-button>
+                <div flex layout-align="center center" layout="row">
+                    <img src="../public/img/me.png" class="md-avatar" alt="Me" />
+                </div>
+
+            </div>          
+          </div>
           
       </div>
       
     </div>
 
          
-    <div id="draggable" class="ui-widget-content">
-         <div class="title-window-top">Files<div class="btn-close"><i class="material-icons">close</i></div></div>
+    <div id="draggable" class="ui-widget-content md-whiteframe-3dp" layout="row">
+         <div class="title-window-top" layout="row" layout-align="center center">
+             <div layout="row" flex="70" class="title-window" layout-align="center center"><span>Files</span></div>
+             
+                <!-- Space -->
+              <span flex="20"></span>
+              
+             <div class="container-id">
+                 <md-button layout="row" layout-align="end center" class="md-icon-button close-btn"  aria-label="Favorite" md-ink-ripple="red" ><md-icon class="material-icons md-light md-48 whiter"> close </md-icon></md-button>
+             </div>
+        </div>
     </div>
 
     

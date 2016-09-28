@@ -3,7 +3,7 @@
 $(document).ready(function(){
     
     $( function() {
-  $("#draggable").draggable({ containment: 'window',  position: [0,28]});
+  $("#draggable").draggable({ containment: 'window'}).position({my:"center", at:"center", of:window});
   $( "#draggable" ).resizable();
   } );
 });
