@@ -42,26 +42,28 @@
       </div>
       
     </div>
+    
+    <window-card></window-card>
 
          
-    <div id="draggable" class="ui-widget-content md-whiteframe-3dp" layout="row">
+    <div class=" md-whiteframe-3dp"  data-drag="true" jqyoui-draggable layout="row">
          <div class="title-window-top" layout="row" layout-align="center center">
              <div layout="row" flex="70" class="title-window" layout-align="center center"><span>Files</span></div>
              
                 <!-- Space -->
-              <span flex="20"></span>
+                <span flex="20"></span>
               
-             <div class="container-id">
-                 <md-button layout="row" layout-align="end center" class="md-icon-button close-btn"  aria-label="Favorite" md-ink-ripple="red" ><md-icon class="material-icons md-light md-48 whiter"> close </md-icon></md-button>
+        <div class="container-id">
+                 <md-button layout="row" ng-click="close($event)" layout-align="end center" class="md-icon-button close-btn"  aria-label="Favorite" md-ink-ripple="red" ><md-icon class="material-icons md-light md-48 whiter"> close </md-icon></md-button>
              </div>
         </div>
     </div>
 
-    
-    <script src="public/js/vendor.bundle.js"></script>
-    <script src="public/js/app.bundle.js"></script>
     <script src="public/js/jquery-ui/jquery.js"></script>
     <script src="public/js/jquery-ui/jquery-ui.js"></script>
+    <script src="public/js/vendor.bundle.js"></script>
+    <script src="public/js/drag-drop/angular-dragdrop.min.js"></script>
+    <script src="public/js/app.bundle.js"></script>
     <script src="public/js/functions.js"></script>
     <script src="app/controllers/desktopController.js"></script>
 </body>
