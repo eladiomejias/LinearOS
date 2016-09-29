@@ -30,7 +30,7 @@
           <div flex id="bar-right" layout="row" layout-align="center center">
             <div class="container-icon md-whiteframe-2dp" flex="100" layout="row" layout-align="">
                 <div id="time" class="whiter" flex="30" layout-align="center center" layout="row"><span>12:32 PM</span></div>
-                <md-button class="md-icon-button icon-desktop " md-no-ink="true" aria-label="Favorite" md-ink-ripple="#FFF"><md-icon class="material-icons md-light md-48 whiter"> today </md-icon></md-button>
+                <md-button class="md-icon-button icon-desktop" ng-click="panelActivo = !panelActivo" md-no-ink="true" aria-label="Favorite" md-ink-ripple="#FFF"><md-icon class="material-icons md-light md-48 whiter"> settings </md-icon></md-button>
                 <md-button class="md-icon-button icon-desktop " md-no-ink="true" aria-label="Favorite" md-ink-ripple="#FFF"><md-icon class="material-icons md-light md-48 whiter"> battery_full </md-icon></md-button>
                 <div flex layout-align="center center" layout="row">
                     <img src="../public/img/me.png" class="md-avatar" alt="Me" />
@@ -43,21 +43,32 @@
       
     </div>
     
-    <window-card></window-card>
+    <div class="ui-widget-content md-whiteframe-3dp draggable" layout="row">
+            <window-card></window-card>
+    </diV>
+    
+     <div class="ui-widget-content md-whiteframe-3dp draggable" layout="row">
+            <window-card></window-card>
+    </diV>
+    
+     <div class="ui-widget-content md-whiteframe-3dp panel" layout="row" ng-show="panelActivo">
+           <panel-control></panel-control>
+    </diV>
+    
 
          
-    <div class=" md-whiteframe-3dp"  data-drag="true" jqyoui-draggable layout="row">
+  <!--  <div class="ui-widget-content md-whiteframe-3dp draggable"  data-drag="true" jqyoui-draggable layout="row">
          <div class="title-window-top" layout="row" layout-align="center center">
              <div layout="row" flex="70" class="title-window" layout-align="center center"><span>Files</span></div>
              
                 <!-- Space -->
-                <span flex="20"></span>
+       <!--         <span flex="20"></span>
               
-        <div class="container-id">
+            <div class="container-id">
                  <md-button layout="row" ng-click="close($event)" layout-align="end center" class="md-icon-button close-btn"  aria-label="Favorite" md-ink-ripple="red" ><md-icon class="material-icons md-light md-48 whiter"> close </md-icon></md-button>
              </div>
         </div>
-    </div>
+    </div>--> 
 
     <script src="public/js/jquery-ui/jquery.js"></script>
     <script src="public/js/jquery-ui/jquery-ui.js"></script>

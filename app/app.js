@@ -11,15 +11,22 @@ app.config(function($mdThemingProvider, $mdIconProvider){
     });
     /* $mdIconProvider.iconSet("avatar", 'scripts/material-icons.svg', 128); */
     
-      $(document).ready(function(){
+    $(document).ready(function(){
     
-  $( function() {
-   $(".draggable").draggable({ containment: 'window'}).position({my:"center", at:"center", of:window});
-   $( ".draggable" ).resizable();});
-   
-   $(".dialog").dialog();
-  
-});
+              $( function() {
+                  
+                 /* Custom window */
+               $(".draggable").draggable({ containment: 'window'}).position({my:"center", at:"center", of:window});
+               $( ".draggable" ).resizable();
+                /* Panel Control*/
+                $(".panel").draggable({ containment: 'window'}).position({my:"center", at:"center", of:window});
+               $( ".panel" ).resizable();
+                  
+              });
+               
+               $(".dialog").dialog();
+              
+            });
    
 });
 

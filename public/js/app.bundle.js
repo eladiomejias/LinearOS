@@ -15,28 +15,32 @@ webpackJsonp([0],[
 	    });
 	    /* $mdIconProvider.iconSet("avatar", 'scripts/material-icons.svg', 128); */
 	    
-	      $(document).ready(function(){
+	    $(document).ready(function(){
 	    
-	  $( function() {
-	   $(".draggable").draggable({ containment: 'window'}).position({my:"center", at:"center", of:window});
-	   $( ".draggable" ).resizable();});
-	   
-	   $(".dialog").dialog();
-	  
-	});
+	              $( function() {
+	                  
+	                 /* Custom window */
+	               $(".draggable").draggable({ containment: 'window'}).position({my:"center", at:"center", of:window});
+	               $( ".draggable" ).resizable();
+	                /* Panel Control*/
+	                $(".panel").draggable({ containment: 'window'}).position({my:"center", at:"center", of:window});
+	               $( ".panel" ).resizable();
+	                  
+	              });
+	               
+	               $(".dialog").dialog();
+	              
+	            });
 	   
 	});
 
 	/* requires */
-	__webpack_require__(6);
+	__webpack_require__(3);
 
 /***/ },
 /* 1 */,
 /* 2 */,
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 	(function (){
@@ -44,15 +48,18 @@ webpackJsonp([0],[
 	    var angular = __webpack_require__(1);
 	    
 	    var app = angular.module("myApp");
-	    /* Directiva con webpack */
-	    app.directive('windowCard', __webpack_require__(7)());
+	    /* Directiva con webpack de la ventana default*/
+	    app.directive('windowCard', __webpack_require__(4)());
+	    /* Directiva del Panel de Control ejecutandose*/
+	    app.directive('panelControl', __webpack_require__(5)());
+
 	    
 	}());    
 	    
 
 
 /***/ },
-/* 7 */
+/* 4 */
 /***/ function(module, exports) {
 
 	module.exports = function() {
@@ -68,6 +75,27 @@ webpackJsonp([0],[
 	    };
 	    
 	    return WindowDirective;
+	    
+	}
+
+
+/***/ },
+/* 5 */
+/***/ function(module, exports) {
+
+	module.exports = function() {
+	    
+	    var PanelDirective = function() {
+	        
+	        return {
+	            restrict: 'E',
+	            templateUrl: 'app/directives/panel-control/panel.html',
+	            replace: true
+	        };
+	        
+	    };
+	    
+	    return PanelDirective;
 	    
 	}
 
