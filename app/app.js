@@ -3,8 +3,8 @@ var app = angular.module('myApp',['ngMaterial', 'ngMessages', 'ui.router', 'ngDr
 
 app.config(function($mdThemingProvider, $mdIconProvider){
     $mdThemingProvider.theme('default')
-    .primaryPalette('blue', {
-        'default': '600'
+    .primaryPalette('grey', {
+        'default': '900'
     })
     .accentPalette('pink', {
         'default': '400'
