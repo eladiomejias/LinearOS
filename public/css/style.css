@@ -338,3 +338,9 @@ body, html{
 .window-relative{
   position: relative;
 }
+
+.all{
+  position: absolute !important;
+  width: 100vw !important;
+  height: 100vh !important;
+}
