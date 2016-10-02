@@ -1,2 +1,3 @@
 /* Scripts for view */
 /*global $ */
+

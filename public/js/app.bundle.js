@@ -8,7 +8,7 @@ webpackJsonp([0],[
 	app.config(function($mdThemingProvider, $mdIconProvider){
 	    $mdThemingProvider.theme('default')
 	    .primaryPalette('blue', {
-	        'default': '600'
+	        'default': '900'
 	    })
 	    .accentPalette('pink', {
 	        'default': '400'

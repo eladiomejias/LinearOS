@@ -15,11 +15,28 @@
 <body ng-app="myApp" ng-cloak ng-controller="desktopController" layout="column">
     
     
+        <div id="menu" ng-class="{ active: menuAnimation }" class=" md-whiteframe-4dp" ng-show="menuAnimation">
+              <div id="menu-container">
+                  <div class="content-menu-icon">
+                      <img ng-src="./public/img/svg/folder.svg" class="menu-open-icon">
+                  </div>
+                  
+                   <div class="content-menu-icon">
+                      <img ng-src="./public/img/svg/spotify.svg" class="menu-open-icon" >
+                  </div>
+                  
+                   <div class="content-menu-icon">
+                      <img ng-src="./public/img/svg/chrome.svg"  class="menu-open-icon">
+                  </div>
+              </div>
+         </div>
+    
     <div layout="row" layout-align="start end" id="bar-container">
+    
       <div id="bar" flex="100" layout='row'>
           
           <div id="icon-menu" flex="5" layout="row" layout-align="center center">
-            <div class="container-icon md-whiteframe-2dp"><md-button class="md-icon-button icon-desktop" aria-label="Favorite" md-ink-ripple="#FFF"><md-icon class="material-icons md-light md-48"> apps </md-icon></md-button></div>          
+            <div class="container-icon md-whiteframe-2dp"><md-button class="md-icon-button icon-desktop" ng-click="menuAnimation = !menuAnimation" aria-label="Favorite" md-ink-ripple="#FFF"><md-icon class="material-icons md-light md-48"> apps </md-icon></md-button></div>          
           </div>
           
           <!-- Space -->
@@ -30,7 +47,7 @@
           <div flex id="bar-right" layout="row" layout-align="center center">
             <div class="container-icon md-whiteframe-2dp" flex="100" layout="row" layout-align="">
                 <div id="time" class="whiter" flex="30" layout-align="center center" layout="row"><span>12:32 PM</span></div>
-                <md-button class="md-icon-button icon-desktop" ng-click="panelActivo = !panelActivo" md-no-ink="true" aria-label="Favorite" md-ink-ripple="#FFF"><md-icon class="material-icons md-light md-48 whiter"> settings </md-icon></md-button>
+                <md-button class="md-icon-button icon-desktop" ng-click="panelActivo = !panelActivo" ng-class="{ active: animations }" aria-label="Favorite" md-ink-ripple="#FFF"><md-icon class="material-icons md-light md-48 whiter"> settings </md-icon></md-button>
                 <md-button class="md-icon-button icon-desktop " md-no-ink="true" aria-label="Favorite" md-ink-ripple="#FFF"><md-icon class="material-icons md-light md-48 whiter"> battery_full </md-icon></md-button>
                 <div flex layout-align="center center" layout="row">
                     <img src="../public/img/me.png" class="md-avatar" alt="Me" />
@@ -43,15 +60,11 @@
       
     </div>
     
-    <div class="ui-widget-content md-whiteframe-3dp draggable" layout="row">
+    <div class="ui-widget-content md-whiteframe-5dp draggable" layout="row">
             <window-card></window-card>
     </diV>
     
-     <div class="ui-widget-content md-whiteframe-3dp draggable" layout="row">
-            <window-card></window-card>
-    </diV>
-    
-     <div class="ui-widget-content md-whiteframe-3dp panel" layout="row" ng-show="panelActivo">
+     <div class="ui-widget-content md-whiteframe-5dp panel" layout="row" ng-show="panelActivo">
            <panel-control></panel-control>
     </diV>
     
