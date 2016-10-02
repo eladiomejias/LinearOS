@@ -120,22 +120,25 @@ body, html{
 /* Animations */
 
 /* when hiding the picture */
-.ng-hide-add         { animation:0.5s fadeOutRight ease-in; }
+.ng-hide-add         { animation:0.5s fadeOutRight ease; }
 
 /* when showing the picture */
 .ng-hide-remove      { animation:0.5s fadeIn ease; }
 
-/* when hiding the menu */
-#menu.ng-hide-add         { animation:0.52s fadeMenu ease; }
+
+
 
 /* when hiding the menu */
-#menu.ng-hide-add #menu-container         { animation:0.34s fadeOut ease;}
+#menu.ng-hide-add         { animation:0.52s closedMenu ease; }
 
 /* when showing the menu */
-#menu.ng-hide-remove      { animation:0.5s showMenu ease; }
+#menu.ng-hide-remove      { animation:0.52s showMenu ease; }
 
 /* when showing the menu */
-#menu.ng-hide-remove  #menu-container     { animation:0.8s fadeIn ease; }
+#menu.ng-hide-remove  #menu-container{ animation:0.8s fadeIn ease;}
+
+/* when hiding the menu content */
+#menu.ng-hide-add #menu-container { animation:0.90s fadeOut ease;}
 
 /* ANIMATIONS (FROM ANIMATE.CSS) ======================== */
 /* flip in */
@@ -222,11 +225,11 @@ body, html{
 
 @keyframes fadeOut {
   from {
-    opacity: 0;
+    opacity: 1;
   }
 
   to {
-    opacity: 1;
+    opacity: 0;
   }
 }
 
@@ -267,18 +270,21 @@ body, html{
 
 
 
-@keyframes fadeMenu {
+@keyframes closedMenu {
   from {
     width: 100px;
+    opacity: 1;
   }
 
   to {
     width: 0px;
+    opacity: 0;
+    visibility: hidden;
   }
 }
 
-.fadeMen {
-  animation-name: fadeMen;
+.closedMenu {
+  animation-name: closedMenu;
 }
 
 
@@ -287,8 +293,8 @@ body, html{
 #menu{
     position: absolute;
     width: 100px;
-    height: 400px;
-    background: #181d1e;
+    /*height: 400px;*/
+    background: rgba(16, 16, 16, 0.89);
     top: 50%;
     transform: translate(0, -50%);
 
@@ -303,6 +309,6 @@ body, html{
 }
 
 .menu-open-icon{
-    padding-bottom: 5px;
+    padding-bottom: 7px;
     width: 48px;
 }
