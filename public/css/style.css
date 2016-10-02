@@ -128,9 +128,14 @@ body, html{
 /* when hiding the menu */
 #menu.ng-hide-add         { animation:0.52s fadeMenu ease; }
 
+/* when hiding the menu */
+#menu.ng-hide-add #menu-container         { animation:0.34s fadeOut ease;}
+
 /* when showing the menu */
 #menu.ng-hide-remove      { animation:0.5s showMenu ease; }
 
+/* when showing the menu */
+#menu.ng-hide-remove  #menu-container     { animation:0.8s fadeIn ease; }
 
 /* ANIMATIONS (FROM ANIMATE.CSS) ======================== */
 /* flip in */
@@ -213,6 +218,23 @@ body, html{
   animation-name: fadeIn;
 }
 
+
+
+@keyframes fadeOut {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeOut {
+  animation-name: fadeOut;
+}
+
+
 @keyframes fadeOutRight {
   from {
     opacity: 1;
@@ -252,7 +274,6 @@ body, html{
 
   to {
     width: 0px;
-    visibility: hidden;
   }
 }
 
