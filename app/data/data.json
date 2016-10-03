@@ -1,0 +1,28 @@
+{
+  "nombre": "Eladio",
+  "apellido": "Mejias",
+  "sistema": "Linear OS",
+  "maquina": {
+        "procesador": {
+            "marca": "Intel",
+            "tipo": "Core i5",
+            "GHz": 3.2,
+            "socket": 1150
+        },
+        
+        "ram":  {
+          "marca": "Corsair",
+          "tipo": "DDR3",
+          "GB": 4,
+          "MHz": 1333,
+          "puerto": "SATA"
+        },
+        
+        "disco":    {
+          "marca": "Samsung",
+          "tipo": "SSD 850 EVO Interno",
+          "GB": 500,
+          "conector": "SATA 3.0 gb"
+        }
+      }
+}

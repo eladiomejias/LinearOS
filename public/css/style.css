@@ -36,8 +36,8 @@ body, html{
     min-width: 320px;
     min-height: 200px;
     border: 0px solid white;
-    width: 1155px;
-    height: 580px;
+    width: 936px;
+    height: 464px;
 }
 
 #icon-menu{
@@ -96,7 +96,7 @@ body, html{
 }
 
 .container-id:hover {
-    background: rgba(0,0,0,0.1);
+    background: rgba(0,0,0,0.3);
 }
 
 .title-window{

@@ -14,6 +14,7 @@ app.controller('desktopController', function ($scope){
     // sized window
     $scope.classNamed = "normal";
     
+    
     $scope.changeWindowSize = function(){
        if ($scope.classNamed === "normal")
             $scope.classNamed = "all";
