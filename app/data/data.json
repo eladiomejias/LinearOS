@@ -14,8 +14,7 @@
           "marca": "Corsair",
           "tipo": "DDR3",
           "GB": 4,
-          "MHz": 1333,
-          "puerto": "SATA"
+          "MHz": 1333
         },
         
         "disco":    {

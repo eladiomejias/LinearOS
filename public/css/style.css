@@ -36,8 +36,6 @@ body, html{
     min-width: 320px;
     min-height: 200px;
     border: 0px solid white;
-    width: 936px;
-    height: 464px;
 }
 
 #icon-menu{
@@ -339,8 +337,15 @@ body, html{
   position: relative;
 }
 
+/* not working */
+
 .all{
   position: absolute !important;
   width: 100vw !important;
   height: 100vh !important;
+}
+
+.default-win{
+      width: 936px;
+    height: 464px;
 }
