@@ -12,14 +12,14 @@ app.controller('desktopController', function ($scope){
     $scope.menuAnimation = false;
     
     // sized window
-    $scope.classNamed = "normal";
+    $scope.classNamed = false;
     
     
     $scope.changeWindowSize = function(){
-       if ($scope.classNamed === "normal")
-            $scope.classNamed = "all";
+       if ($scope.classNamed === true)
+            $scope.classNamed = false;
         else
-            $scope.classNamed = "normal";
+            $scope.classNamed = true;
     }
     
     function close(event){

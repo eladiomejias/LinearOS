@@ -113,7 +113,7 @@ body, html{
 
 .panel{
     min-width: 440px;
-    min-height: 410px;
+    min-height: 210px;
     background: #f5f5f5;
     max-width: 600px;
 }
@@ -346,6 +346,6 @@ body, html{
 }
 
 .default-win{
-      width: 936px;
+     width: 936px;
     height: 464px;
 }
