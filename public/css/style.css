@@ -349,3 +349,29 @@ body, html{
      width: 936px;
     height: 464px;
 }
+
+.img-panel{
+  width: 95px;
+  display: block;
+  margin: 10px auto 0px auto;
+}
+
+.panel-control .md-display-2{
+  text-align: center;
+}
+
+.panel:focus{
+  z-index: 1 !important;
+}
+
+#panel-content p{
+    line-height: 1.4;
+    font-size: 0.915em;
+    margin: 0px;
+    margin-bottom: 20px;
+}
+
+#panel-content .md-display-2 {
+    margin: 0px;
+    font-size: 1.5em;
+}
