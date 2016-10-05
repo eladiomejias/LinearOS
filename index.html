@@ -14,7 +14,7 @@
 </head>
 <body ng-app="myApp" ng-cloak ng-controller="desktopController" layout="column">
     
-    
+
         <div id="menu" ng-class="{ active: menuAnimation }" class=" md-whiteframe-4dp" ng-show="menuAnimation">
               <div id="menu-container">
                 <!-- ng-repeat this -->
@@ -60,7 +60,7 @@
       <div id="bar" flex="100" layout='row'>
           
           <div id="icon-menu" flex="5" layout="row" layout-align="center center">
-            <div class="container-icon md-whiteframe-2dp"><md-button class="md-icon-button icon-desktop" ng-click="menuAnimation = !menuAnimation" aria-label="Favorite" md-ink-ripple="#FFF"><md-icon class="material-icons md-light md-48"> apps </md-icon></md-button></div>          
+            <div class="container-icon md-whiteframe-2dp"><md-button class="md-icon-button icon-desktop" ng-click="menuAnimation = !menuAnimation" aria-label="Favorite" md-ink-ripple="#FFF"><md-icon class="material-icons md-light md-48">apps</md-icon></md-button></div>          
           </div>
           
           <!-- Space -->
@@ -70,12 +70,12 @@
           <!-- Flex del espacio restante / afectado con min-width -->
           <div flex id="bar-right" layout="row" layout-align="center center">
             <div class="container-icon md-whiteframe-2dp" flex="100" layout="row" layout-align="">
-                <div id="time" class="whiter" flex="30" layout-align="center center" layout="row"><span>12:32 PM</span></div>
+                <div id="time" class="whiter" flex="30" layout-align="center center" layout="row"><span>{{ myData.nombre }}</span></div>
                 <md-button class="md-icon-button icon-desktop" ng-click="panelActivo = !panelActivo" ng-class="{ active: animations }" aria-label="Favorite" md-no-ink="true"><md-icon class="material-icons md-light md-48 whiter"> settings </md-icon></md-button>
                 <md-button class="md-icon-button icon-desktop " md-no-ink="true" aria-label="Favorite" md-ink-ripple="#FFF"><md-icon class="material-icons md-light md-48 whiter"> battery_full </md-icon></md-button>
                 <div flex layout-align="center center" layout="row">
                     <img src="../public/img/me.png" class="md-avatar" alt="Me" />
-                </div>
+                    </div>
 
             </div>          
           </div>
@@ -98,8 +98,9 @@
         
      <div class="ui-widget-content md-whiteframe-5dp draggable default-win" layout="row" ng-class="{ 'all': classNamed }">  
          <div class="window">
+            
     <div class="title-window-top" layout="row"  layout-align="center center">
-                 <div layout="row" flex="95" class="title-window" layout-align="center center"><span>Files</span></div>
+                 <div layout="row" flex="95" class="title-window" layout-align="center center"><span></span></div>
                  
                     <!-- Space -->
                     <span flex="5"></span>
@@ -125,21 +126,6 @@
 
 </div>
 
-    
-
-         
-  <!--  <div class="ui-widget-content md-whiteframe-3dp draggable"  data-drag="true" jqyoui-draggable layout="row">
-         <div class="title-window-top" layout="row" layout-align="center center">
-             <div layout="row" flex="70" class="title-window" layout-align="center center"><span>Files</span></div>
-             
-                <!-- Space -->
-       <!--         <span flex="20"></span>
-              
-            <div class="container-id">
-                 <md-button layout="row" ng-click="close($event)" layout-align="end center" class="md-icon-button close-btn"  aria-label="Favorite" md-ink-ripple="red" ><md-icon class="material-icons md-light md-48 whiter"> close </md-icon></md-button>
-             </div>
-        </div>
-    </div>--> 
 
     <script src="public/js/jquery-ui/jquery.js"></script>
     <script src="public/js/jquery-ui/jquery-ui.js"></script>
@@ -148,5 +134,8 @@
     <script src="public/js/app.bundle.js"></script>
     <script src="public/js/functions.js"></script>
     <script src="app/controllers/desktopController.js"></script>
+    
 </body>
+
+
 </html>

@@ -11,7 +11,15 @@ app.config(function($mdThemingProvider, $mdIconProvider){
     });
     /* $mdIconProvider.iconSet("avatar", 'scripts/material-icons.svg', 128); */
     
-    $(document).ready(function(){
+   
+
+/* requires */
+require("./directives");
+require("./services");
+
+
+
+ $(document).ready(function(){
     
               $( function() {
                   
@@ -29,6 +37,3 @@ app.config(function($mdThemingProvider, $mdIconProvider){
             });
    
 });
-
-/* requires */
-require("./directives");

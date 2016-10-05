@@ -36,6 +36,7 @@ webpackJsonp([0],[
 
 	/* requires */
 	__webpack_require__(3);
+	__webpack_require__(6)
 
 /***/ },
 /* 1 */,
@@ -99,6 +100,63 @@ webpackJsonp([0],[
 	    
 	}
 
+
+/***/ },
+/* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	(function (){
+	    
+	    var angular = __webpack_require__(1);
+	    
+	    var app = angular.module("myApp");
+	    app.factory('staticData', __webpack_require__(7)());
+	    
+	}());    
+	    
+	    
+	// (function (){
+	    
+	//     var angular = require('angular');
+	    
+	//     var app = angular.module("myApp");
+	//     app.factory('staticData', function($http) {
+	        
+	//         var factory = {};
+	    
+	//       factory.getData = function () {
+	//             return $http.get('../data/data.json');
+	//         }
+	        
+	//         return factory;
+	        
+	//     });
+	    
+	// }());   
+
+
+/***/ },
+/* 7 */
+/***/ function(module, exports) {
+
+	module.exports = function () {
+
+	    function staticData ($http) {
+	        
+	        var factory = {};
+	    
+	       factory.getData = function (cb, error) {
+	            return $http.get('./app/data/data.json').then(cb, error);
+	        }
+	        return factory;
+	        
+	    }
+	    
+	    staticData.$inject = ['$http'];
+	    
+	    return staticData;
+	    
+	}
 
 /***/ }
 ]);

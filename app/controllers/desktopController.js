@@ -1,7 +1,7 @@
 var app = angular.module("myApp");
 
 // Basic controller for the aplication
-app.controller('desktopController', function ($scope){
+app.controller('desktopController', function ($scope, staticData){
     
     //demo scopes
     $scope.hello = "Linear OS";
@@ -13,6 +13,15 @@ app.controller('desktopController', function ($scope){
     
     // sized window
     $scope.classNamed = false;
+    
+    //data
+    $scope.myData;
+    staticData.getData(function (result) {
+        $scope.myData = result.data;
+        console.log($scope.myData.nombre);
+    }, function (error) {
+        console.log(error)
+    });
     
     
     $scope.changeWindowSize = function(){
@@ -29,6 +38,7 @@ app.controller('desktopController', function ($scope){
         console.log(parent);
         
     }
+    
     
   
     
