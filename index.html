@@ -17,7 +17,7 @@
 
         <div id="menu" ng-class="{ active: menuAnimation }" class=" md-whiteframe-4dp" ng-show="menuAnimation">
               <div id="menu-container">
-                <!-- ng-repeat this -->
+                <!-- ng-repeat this 
 
                   <div class="content-menu-icon">
                       <img ng-src="./public/img/svg/folder.svg" class="menu-open-icon">
@@ -51,7 +51,13 @@
                   <div class="content-menu-icon">
                       <img ng-src="./public/img/svg/terminal.svg"  class="menu-open-icon">
                   </div>
-                <!-- end ng-repeat -->
+                end ng-repeat -->
+                
+                
+                <div class="content-menu-icon" ng-repeat="programa in myData.programas" id="programa.id">
+                      <img ng-src="./public/img/svg/{{programa.icon}}"  class="menu-open-icon">
+                  </div>
+                
               </div>
          </div>
     
