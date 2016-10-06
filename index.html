@@ -17,45 +17,9 @@
 
         <div id="menu" ng-class="{ active: menuAnimation }" class=" md-whiteframe-4dp" ng-show="menuAnimation">
               <div id="menu-container">
-                <!-- ng-repeat this 
-
-                  <div class="content-menu-icon">
-                      <img ng-src="./public/img/svg/folder.svg" class="menu-open-icon">
-                  </div>
-                  
-                   <div class="content-menu-icon">
-                      <img ng-src="./public/img/svg/chrome-flat.svg"  class="menu-open-icon">
-                  </div>
-                  
-                   <div class="content-menu-icon">
-                      <img ng-src="./public/img/svg/skype.svg"  class="menu-open-icon">
-                  </div>
-                  
-                   <div class="content-menu-icon">
-                      <img ng-src="./public/img/svg/atom.svg"  class="menu-open-icon">
-                  </div>
-                  
-                    <div class="content-menu-icon">
-                      <img ng-src="./public/img/svg/spotify.svg" class="menu-open-icon" >
-                  </div>
-                  
-                  
-                  <div class="content-menu-icon">
-                      <img ng-src="./public/img/svg/google-drive.svg"  class="menu-open-icon">
-                  </div>
-                  
-                <div class="content-menu-icon">
-                      <img ng-src="./public/img/svg/slack.svg"  class="menu-open-icon">
-                  </div>
-                  
-                  <div class="content-menu-icon">
-                      <img ng-src="./public/img/svg/terminal.svg"  class="menu-open-icon">
-                  </div>
-                end ng-repeat -->
-                
-                
-                <div class="content-menu-icon" ng-repeat="programa in myData.programas" id="programa.id">
-                      <img ng-src="./public/img/svg/{{programa.icon}}"  class="menu-open-icon">
+                <!-- ng-repeat -->
+                <div class="content-menu-icon" ng-repeat="programa in myData.programas">
+                      <img ng-src="./public/img/svg/{{programa.icon}}"  class="menu-open-icon"  ng-click="openProgram(programa.id, programa.active)">
                   </div>
                 
               </div>
@@ -76,7 +40,7 @@
           <!-- Flex del espacio restante / afectado con min-width -->
           <div flex id="bar-right" layout="row" layout-align="center center">
             <div class="container-icon md-whiteframe-2dp" flex="100" layout="row" layout-align="">
-                <div id="time" class="whiter" flex="30" layout-align="center center" layout="row"><span>{{ myData.nombre }}</span></div>
+                <div id="time" class="whiter" flex="30" layout-align="center center" layout="row"><span>{{ myData.programas[0].nombre }}</span></div>
                 <md-button class="md-icon-button icon-desktop" ng-click="panelActivo = !panelActivo" ng-class="{ active: animations }" aria-label="Favorite" md-no-ink="true"><md-icon class="material-icons md-light md-48 whiter"> settings </md-icon></md-button>
                 <md-button class="md-icon-button icon-desktop " md-no-ink="true" aria-label="Favorite" md-ink-ripple="#FFF"><md-icon class="material-icons md-light md-48 whiter"> battery_full </md-icon></md-button>
                 <div flex layout-align="center center" layout="row">
@@ -90,26 +54,36 @@
       
     </div>
     
-    
-    <!--
-    <div class="ui-widget-content md-whiteframe-5dp draggable default-win" layout="row">
+
+    <!-- Manually creates the windows because a visual bug with ng-repeat -->
+    <div class="" layout="row" id="{{ myData.programas[0].id }}">
+            <window-card nombre="{{ myData.programas[0].nombre }}"></window-card>
+    </diV>
+    <div class="ui-widget-content md-whiteframe-5dp draggable default-win this-hide" layout="row" id="{{ myData.programas[1].id }}">
             <window-card></window-card>
     </diV>
-    -->
+    <div class="ui-widget-content md-whiteframe-5dp draggable default-win this-hide" layout="row" id="{{ myData.programas[2].id }}">
+            <window-card></window-card>
+    </diV>
+    <div class="ui-widget-content md-whiteframe-5dp draggable default-win this-hide" layout="row" id="{{ myData.programas[3].id }}">
+            <window-card></window-card>
+    </diV>
+
+
      <div class="ui-widget-content md-whiteframe-5dp panel" layout="row" ng-show="panelActivo">
            <panel-control></panel-control>
     </diV>
     
     
-        
-     <div class="ui-widget-content md-whiteframe-5dp draggable default-win" layout="row" ng-class="{ 'all': classNamed }">  
+<!--
+     <div class="ui-widget-content md-whiteframe-5dp default-win draggable" layout="row" ng-class="{ 'all': classNamed }">  
          <div class="window">
             
     <div class="title-window-top" layout="row"  layout-align="center center">
                  <div layout="row" flex="95" class="title-window" layout-align="center center"><span></span></div>
                  
                     <!-- Space -->
-                    <span flex="5"></span>
+  <!--                 <span flex="5"></span>
                   
                   
             <div class="container-id">
@@ -123,23 +97,21 @@
             </div>
     </div>
     
-    <!-- Where we put some default content -->
-    <div class="content-container bg-size" style="background-image: url(/public/img/mockups/Chrome.png);" >
-        
-      
-    </div>
+ 
 </div>
 
-</div>
+</div>-->
+
 
 
     <script src="public/js/jquery-ui/jquery.js"></script>
     <script src="public/js/jquery-ui/jquery-ui.js"></script>
     <script src="public/js/vendor.bundle.js"></script>
-    <script src="public/js/drag-drop/angular-dragdrop.min.js"></script>
     <script src="public/js/app.bundle.js"></script>
     <script src="public/js/functions.js"></script>
     <script src="app/controllers/desktopController.js"></script>
+    <script src="public/js/drag-drop/angular-dragdrop.min.js"></script>
+
     
 </body>
 

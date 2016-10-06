@@ -25,7 +25,7 @@
         }
       },
       
-      "programas":
+  "programas":
   [
     {"id":"chrome-1", "nombre":"Chrome", "icon": "chrome-flat.svg", "active": false, "mb": 4 }, 
     {"id":"spotify-1", "nombre":"Spotify", "icon": "spotify.svg", "active": false, "mb": 8},

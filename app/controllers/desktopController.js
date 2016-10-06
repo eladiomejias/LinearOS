@@ -40,6 +40,12 @@ app.controller('desktopController', function ($scope, staticData){
     }
     
     
+   $scope.openProgram = function(id, active){
+       
+       
+        console.log(id);
+    }
+    
   
     
     
