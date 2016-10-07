@@ -9,6 +9,9 @@ app.directive('window', function(){
                 bg: "="
             },
             templateUrl: 'app/directives/window/window.html',
+            link: function(scope, element, attributes){
+                element.addClass('bg-size');
+            }
         };
         
 });

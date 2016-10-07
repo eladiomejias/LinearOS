@@ -27,7 +27,7 @@
       
   "programas":
   [
-    {"id":"chrome-1", "nombre":"Chrome", "icon": "chrome-flat.svg", "active": false, "mb": 4, "backgroundUrl": "./public/img/mockups/Chrome.png" }, 
+    {"id":"chrome-1", "nombre":"Chrome", "icon": "chrome-flat.svg", "active": false, "mb": 4, "bgLink": "./public/img/mockups/Chrome.png" }, 
     {"id":"spotify-1", "nombre":"Spotify", "icon": "spotify.svg", "active": false, "mb": 8},
     {"id":"atom-1", "nombre":"Atom", "icon": "atom.svg", "active": false , "mb": 5},
     {"id":"drive-1", "nombre":"Google Drive", "icon": "google-drive.svg", "active": false, "mb": 7},

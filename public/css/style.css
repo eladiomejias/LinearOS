@@ -356,6 +356,11 @@ body, html{
   margin: 10px auto 0px auto;
 }
 
+.full-width{
+  width: 100%;
+  height: 100%;
+}
+
 .panel-control .md-display-2{
   text-align: center;
 }
