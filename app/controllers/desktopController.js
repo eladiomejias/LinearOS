@@ -7,6 +7,8 @@ app.controller('desktopController', function ($scope, staticData){
     $scope.hello = "Linear OS";
     $scope.close = close;
     
+    $scope.really = "really";
+    
     //animation scope
     $scope.animation = false;
     $scope.menuAnimation = false;
@@ -55,6 +57,7 @@ app.controller('desktopController', function ($scope, staticData){
    $scope.openProgram = function(id, active){
        
         $scope.hello = "Panel";
+        
         console.log(id);
     }
     

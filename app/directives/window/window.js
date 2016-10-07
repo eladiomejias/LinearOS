@@ -1,21 +1,13 @@
-module.exports = function() {
-    
-    var WindowDirective = function() {
+var app = angular.module("myApp");
+app.directive('window', function(){
         
         return {
             restrict: 'E',
             scope: {
-                nombre: '='
+                id: "="
             },
             templateUrl: 'app/directives/window/window.html',
-            link:function(scope,elem,attrs){
-                console.log('test', scope.nombre);
-             },
-            replace: true
         };
         
-    };
+});
     
-    return WindowDirective;
-    
-}

@@ -56,40 +56,12 @@
     
     <!-- Manually creates the windows because a visual bug with ng-repeat -->
     <div class="ui-widget-content md-whiteframe-5dp draggable default-win" layout="row" id="{{ myData.programas[1].id }}">
-            <window-card></window-card>
+            <window id="myData.programas[1].id"></window>
     </diV>
 
      <div class="ui-widget-content md-whiteframe-5dp panel" layout="row" ng-show="panelActivo" id="panel-cont">
            <my-panel></my-panel>
     </diV>
-    
-<!--
-     <div class="ui-widget-content md-whiteframe-5dp default-win draggable" layout="row" ng-class="{ 'all': classNamed }">  
-         <div class="window">
-            
-    <div class="title-window-top" layout="row"  layout-align="center center">
-                 <div layout="row" flex="95" class="title-window" layout-align="center center"><span></span></div>
-                 
-                    <!-- Space -->
-  <!--                 <span flex="5"></span>
-                  
-                  
-            <div class="container-id">
-                     <md-button layout="row" ng-click="" layout-align="end center" class="md-icon-button close-btn"  aria-label="Favorite" md-ink-ripple="#ffffff" ><md-icon class="material-icons md-light md-48 whiter"> remove </md-icon></md-button>
-            </div>
-            <div class="container-id">
-                     <md-button layout="row" ng-click="changeWindowSize()" layout-align="end center" class="md-icon-button close-btn"  aria-label="Favorite" md-ink-ripple="#ffffff" ><md-icon class="material-icons md-light md-48 whiter"> aspect_ratio </md-icon></md-button>
-            </div>
-             <div class="container-id">
-                     <md-button layout="row" ng-click="close($event)" layout-align="end center" class="md-icon-button close-btn"  aria-label="Favorite" md-ink-ripple="#ffffff" ><md-icon class="material-icons md-light md-48 whiter"> close </md-icon></md-button>
-            </div>
-    </div>
-    
- 
-</div>
-
-</div>-->
-
 
 
     <script src="public/js/jquery-ui/jquery.js"></script>
@@ -100,6 +72,7 @@
     <script src="app/controllers/desktopController.js"></script>
     <script src="app/services/staticData.js"></script>
     <script src="app/directives/panelControl/panel.js"></script>
+    <script src="app/directives/window/window.js"></script>
     <script src="public/js/drag-drop/angular-dragdrop.min.js"></script>
 
     
