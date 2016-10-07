@@ -14,14 +14,26 @@ app.controller('desktopController', function ($scope, staticData){
     // sized window
     $scope.classNamed = false;
     
-    //data
     $scope.myData;
+    
+    //data
+    staticData.getData().success(function(theData){
+        
+        $scope.myData = theData;
+        
+    }).error(function(error){
+    
+        console.log(error);
+    
+    });
+    
+    /*
     staticData.getData(function (result) {
         $scope.myData = result.data;
         console.log($scope.myData.nombre);
     }, function (error) {
         console.log(error)
-    });
+    });*/
     
     
     $scope.changeWindowSize = function(){
@@ -42,7 +54,7 @@ app.controller('desktopController', function ($scope, staticData){
     
    $scope.openProgram = function(id, active){
        
-       
+        $scope.hello = "Panel";
         console.log(id);
     }
     
@@ -50,3 +62,4 @@ app.controller('desktopController', function ($scope, staticData){
     
     
 });
+    

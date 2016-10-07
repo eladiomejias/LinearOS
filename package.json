@@ -16,8 +16,7 @@
   },
   "devDependencies": {
     "gulp-install": "^0.6.0",
-    "gulp-sass": "^2.3.2",
-    "webpack": "^1.13.2"
+    "gulp-sass": "^2.3.2"
   },
   "scripts": {
     "bundle": "webpack --watch"

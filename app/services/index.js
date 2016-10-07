@@ -3,8 +3,7 @@
     var angular = require('angular');
     
     var app = angular.module("myApp");
-    app.factory('staticData', require('./staticData.js')());
-    
+
 }());    
     
     

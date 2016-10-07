@@ -1,18 +1,18 @@
-module.exports = function () {
 
-    function staticData ($http) {
-        
-        var factory = {};
+    var app = angular.module("myApp");
     
-       factory.getData = function (cb, error) {
-            return $http.get('./app/data/data.json').then(cb, error);
+    app.factory('staticData', function($http){
+        
+        var data;
+        
+        function getData(){
+            return $http.get("./app/data/data.json");
         }
-        return factory;
         
-    }
+        return{
+            getData: getData
+        }
+        
+    });
+
     
-    staticData.$inject = ['$http'];
-    
-    return staticData;
-    
-}

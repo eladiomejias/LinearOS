@@ -13,9 +13,7 @@ app.config(function($mdThemingProvider, $mdIconProvider){
     
    
 
-/* requires */
-require("./directives");
-require("./services");
+
 
 
 

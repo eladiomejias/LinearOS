@@ -54,26 +54,14 @@
       
     </div>
     
-
     <!-- Manually creates the windows because a visual bug with ng-repeat -->
-    <div class="" layout="row" id="{{ myData.programas[0].id }}">
-            <window-card nombre="{{ myData.programas[0].nombre }}"></window-card>
-    </diV>
-    <div class="ui-widget-content md-whiteframe-5dp draggable default-win this-hide" layout="row" id="{{ myData.programas[1].id }}">
+    <div class="ui-widget-content md-whiteframe-5dp draggable default-win" layout="row" id="{{ myData.programas[1].id }}">
             <window-card></window-card>
     </diV>
-    <div class="ui-widget-content md-whiteframe-5dp draggable default-win this-hide" layout="row" id="{{ myData.programas[2].id }}">
-            <window-card></window-card>
-    </diV>
-    <div class="ui-widget-content md-whiteframe-5dp draggable default-win this-hide" layout="row" id="{{ myData.programas[3].id }}">
-            <window-card></window-card>
-    </diV>
-
 
      <div class="ui-widget-content md-whiteframe-5dp panel" layout="row" ng-show="panelActivo">
-           <panel-control></panel-control>
+           <my-panel></my-panel>
     </diV>
-    
     
 <!--
      <div class="ui-widget-content md-whiteframe-5dp default-win draggable" layout="row" ng-class="{ 'all': classNamed }">  
@@ -110,10 +98,10 @@
     <script src="public/js/app.bundle.js"></script>
     <script src="public/js/functions.js"></script>
     <script src="app/controllers/desktopController.js"></script>
+    <script src="app/services/staticData.js"></script>
+    <script src="app/directives/panelControl/panel.js"></script>
     <script src="public/js/drag-drop/angular-dragdrop.min.js"></script>
 
     
 </body>
-
-
 </html>

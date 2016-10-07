@@ -9,7 +9,7 @@ module.exports = function() {
             },
             templateUrl: 'app/directives/window/window.html',
             link:function(scope,elem,attrs){
-                console.log('test', scope.nombre)
+                console.log('test', scope.nombre);
              },
             replace: true
         };
