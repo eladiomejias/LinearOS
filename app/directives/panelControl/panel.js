@@ -3,7 +3,7 @@ app.directive('myPanel', function(){
         
         return {
             restrict: 'E',
-            scope: true,
+            scope: false,
             templateUrl: 'app/directives/panelControl/panel.html',
         };
         
