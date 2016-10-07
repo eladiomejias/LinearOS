@@ -1,6 +1,6 @@
 <div class="window">
     <div class="title-window-top" layout="row"  layout-align="center center">
-                 <div layout="row" flex="95" class="title-window" layout-align="center center"><span>{{id}}</span></div>
+                 <div layout="row" flex="95" class="title-window" layout-align="center center"><span>{{nombre}}</span></div>
                  
                     <!-- Space -->
                     <span flex="5"></span>
@@ -18,7 +18,7 @@
     </div>
     
     <!-- Where we put some default content -->
-    <div class="content-container bg-size" style="background-image: url(/public/img/mockups/Chrome.png);" ng-class="" >
+    <div class="content-container bg-size" ng-style="{'background-image':'url('+ {{bg}} + ')'}" >
         
       
     </div>
