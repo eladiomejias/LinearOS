@@ -71,15 +71,16 @@ body, html{
 .container-icon{
     background: rgba(16, 16, 16, 0.77);
     padding: 1px;
+    z-index: 8;
 }
 
-#bar-right .container-icon{ background: rgb(24, 29, 30);}
+#bar-right .container-icon{ background: rgba(16, 16, 16, 0.77);}
 
 .title-window-top{
   position: absolute;
   height: 40px;  
   width: 100%;
-  background-color: #313131;
+  background-color: #2e2f35;
 }
 
 #close-btn{
@@ -303,6 +304,7 @@ body, html{
     background: rgba(16, 16, 16, 0.89);
     top: 50%;
     transform: translate(0, -50%);
+     z-index: 8;
 
 }
  
