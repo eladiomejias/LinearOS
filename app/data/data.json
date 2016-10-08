@@ -28,11 +28,11 @@
   "programas":
   [
     {"id":"chrome-1", "nombre":"Chrome", "icon": "chrome-flat.svg", "active": false, "mb": 4, "bgLink": "./public/img/mockups/Chrome.png" }, 
-    {"id":"spotify-1", "nombre":"Spotify", "icon": "spotify.svg", "active": false, "mb": 8, "bgLink": "./public/img/mockups/Chrome.png"},
-    {"id":"atom-1", "nombre":"Atom", "icon": "atom.svg", "active": false , "mb": 5, "bgLink": "./public/img/mockups/Chrome.png"},
-    {"id":"drive-1", "nombre":"Google Drive", "icon": "google-drive.svg", "active": false, "mb": 7, "bgLink": "./public/img/mockups/Chrome.png"},
+    {"id":"spotify-1", "nombre":"Spotify", "icon": "spotify.svg", "active": false, "mb": 8, "bgLink": "./public/img/mockups/Spotify.jpg"},
+    {"id":"atom-1", "nombre":"Atom", "icon": "atom.svg", "active": false , "mb": 5, "bgLink": "./public/img/mockups/Editor.png"},
+    {"id":"drive-1", "nombre":"Google Drive", "icon": "google-drive.svg", "active": false, "mb": 7, "bgLink": "./public/img/mockups/Drive.png"},
     {"id":"slack-1", "nombre":"Slack", "icon": "slack.svg", "active": false, "mb": 8, "bgLink": "./public/img/mockups/Slack.jpg"},
-    {"id":"skype-1", "nombre":"Skype", "icon": "skype.svg", "active": false, "mb": 12, "bgLink": "./public/img/mockups/Chrome.png"},
-    {"id":"terminal-1", "nombre":"Terminal", "icon": "terminal.svg", "active": false, "mb": 4, "bgLink": "./public/img/mockups/Chrome.png"}
+    {"id":"skype-1", "nombre":"Skype", "icon": "skype.svg", "active": false, "mb": 12, "bgLink": "./public/img/mockups/Skype.png"},
+    {"id":"terminal-1", "nombre":"Terminal", "icon": "terminal.svg", "active": false, "mb": 4, "bgLink": "./public/img/mockups/Terminal.png"}
  ]
 }

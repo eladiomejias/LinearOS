@@ -12,6 +12,8 @@
 
 
 </head>
+
+<!-- Loads ng-app / body -->
 <body ng-app="myApp" ng-cloak ng-controller="desktopController" layout="column">
     
 
@@ -40,7 +42,7 @@
           <!-- Flex del espacio restante / afectado con min-width -->
           <div flex id="bar-right" layout="row" layout-align="center center">
             <div class="container-icon md-whiteframe-2dp" flex="100" layout="row" layout-align="">
-                <div id="time" class="whiter" flex="30" layout-align="center center" layout="row"><span>{{ myData.programas[0].nombre }}</span></div>
+                <div id="time" class="whiter" flex="30" layout-align="center center" layout="row"><span>12:00 PM</span></div>
                 <md-button class="md-icon-button icon-desktop" ng-click="panelActivo = !panelActivo" ng-class="{ active: animations }" aria-label="Favorite" md-no-ink="true"><md-icon class="material-icons md-light md-48 whiter"> settings </md-icon></md-button>
                 <md-button class="md-icon-button icon-desktop " md-no-ink="true" aria-label="Favorite" md-ink-ripple="#FFF"><md-icon class="material-icons md-light md-48 whiter"> battery_full </md-icon></md-button>
                 <div flex layout-align="center center" layout="row">
@@ -58,15 +60,16 @@
     <div class="ui-widget-content md-whiteframe-5dp draggable default-win" layout="row" id="{{ myData.programas[0].id }}">
             <window id="myData.programas[0].id" nombre="myData.programas[0].nombre" bg="myData.programas[0].bgLink"></window>
     </diV>
-    <div class="ui-widget-content md-whiteframe-5dp draggable default-win" layout="row" id="{{ myData.programas[4].id }}">
-            <window id="myData.programas[4].id" nombre="myData.programas[4].nombre" bg="myData.programas[4].bgLink"></window>
+    <div class="ui-widget-content md-whiteframe-5dp draggable default-win" layout="row" id="{{ myData.programas[1].id }}">
+            <window id="myData.programas[1].id" nombre="myData.programas[1].nombre" bg="myData.programas[1].bgLink"></window>
     </diV>
 
+    <!-- Panel Control -->
      <div class="ui-widget-content md-whiteframe-5dp panel" layout="row" ng-show="panelActivo" id="panel-cont">
            <my-panel></my-panel>
     </diV>
 
-
+    <!-- Scripts manually -->
     <script src="public/js/jquery-ui/jquery.js"></script>
     <script src="public/js/jquery-ui/jquery-ui.js"></script>
     <script src="public/js/vendor.bundle.js"></script>
