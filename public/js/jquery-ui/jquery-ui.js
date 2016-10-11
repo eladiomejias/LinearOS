@@ -3765,7 +3765,7 @@ $.widget( "ui.resizable", $.ui.mouse, {
 		minWidth: 10,
 
 		// See #7960
-		zIndex: 0,
+		zIndex: 1,
 
 		// Callbacks
 		resize: null,

@@ -4,14 +4,15 @@ app.directive('window', function(){
         return {
             restrict: 'E',
             scope: {
-                id: "=",
+                myId: "=",
                 nombre: "=",
                 bg: "="
             },
             templateUrl: 'app/directives/window/window.html',
             link: function(scope, element, attributes){
                 element.addClass('bg-size');
-            }
+               
+        }
         };
         
 });

@@ -382,3 +382,8 @@ body, html{
     margin: 0px;
     font-size: 1.5em;
 }
+
+.custom-position{
+  position: absolute !important;
+}
+
