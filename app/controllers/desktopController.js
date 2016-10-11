@@ -70,18 +70,13 @@ app.controller('desktopController', function ($scope, $compile, staticData){
        var thing =  $('<div/>').attr({
             'class': 'ui-widget-content md-whiteframe-5dp draggable default-win custom-position',
             'style': 'width:' + $scope.myData.programas[2].width + 'px ; height: ' + $scope.myData.programas[2].height + 'px'
-        }).draggable().insertAfter("#menu");
+        }).draggable().appendTo("#base");
             
         $(thing).resizable();
         
         
         
         // Creating the directive to append in the container    
-        
-       /* var win = angular.element(document.createElement('window'));
-        var el = $compile( win )( $scope );
-        //where do you want to place the new element?
-         angular.element(thing).append(win);*/
         var win = angular.element(document.createElement('window'));
         var named = "'"+ $scope.myData.programas[4].nombre+"'";
         console.log(named);
