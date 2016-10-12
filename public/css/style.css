@@ -387,3 +387,6 @@ body, html{
   position: absolute !important;
 }
 
+.active-icon{
+  border-left: 2px solid #E91E63;
+}

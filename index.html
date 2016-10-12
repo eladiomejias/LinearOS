@@ -21,11 +21,9 @@
         <div id="menu" ng-class="{ active: menuAnimation }" class=" md-whiteframe-4dp" ng-show="menuAnimation">
               <div id="menu-container">
                 <!-- ng-repeat -->
-                <div class="content-menu-icon" ng-repeat="programa in myData.programas">
+                <div class="content-menu-icon" ng-repeat="programa in myData.programas" id="{{programa.id}}">
                       <img ng-src="./public/img/svg/{{programa.icon}}"  class="menu-open-icon"  ng-click="openProgram(programa.id, programa.active)">
                   </div>
-                      <md-button class="md-raised" ng-click="addProgram(programa.id)">Button</md-button>
-
               </div>
          </div>
     
@@ -58,13 +56,13 @@
       
     </div>
     
-    <!-- Manually creates the windows because a visual bug with ng-repeat -->
+    <!-- Manually creates the windows because a visual bug with ng-repeat 
   <div class="ui-widget-content md-whiteframe-5dp draggable default-win" layout="row" id="{{ myData.programas[4].id }}" ng-style="{'width': myData.programas[4].width, 'height': myData.programas[4].height}">
             <window myId="myData.programas[4].id" nombre="myData.programas[4].nombre" bg="myData.programas[4].bgLink"></window>
     </diV>
     <div class="ui-widget-content md-whiteframe-5dp draggable default-win" layout="row" id="{{ myData.programas[7].id }}" ng-style="{'width': myData.programas[7].width, 'height': myData.programas[7].height}">
             <window myId="myData.programas[7].id" nombre="myData.programas[7].nombre" bg="myData.programas[7].bgLink"></window>
-    </diV>
+    </diV>-->
     
 
     <!-- Panel Control -->

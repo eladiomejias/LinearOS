@@ -55,41 +55,65 @@ app.controller('desktopController', function ($scope, $compile, staticData){
         
     }
     
-    
-   $scope.openProgram = function(id, active){
-       
-        $scope.hello = "Panel";
-        
-        console.log(id);
-    }
+
     
   
-    $scope.addProgram = function(programaId){
+    $scope.openProgram = function(nombreId, activeValue){
         
-        // Creating the container of the window
-       var thing =  $('<div/>').attr({
-            'class': 'ui-widget-content md-whiteframe-5dp draggable default-win custom-position',
-            'style': 'width:' + $scope.myData.programas[2].width + 'px ; height: ' + $scope.myData.programas[2].height + 'px'
-        }).draggable().appendTo("#base");
+        if(activeValue == false){
+
+                //console.log(nombreId);
+                
+                //Function to search the index
+                var index = searchId(nombreId);
+                
+                //console.log(index);
+                
+                // Creating the container of the window
+               var thing =  $('<div/>').attr({
+                    'class': 'ui-widget-content md-whiteframe-5dp draggable default-win custom-position',
+                    'style': 'width:' + $scope.myData.programas[index].width + 'px ; height: ' + $scope.myData.programas[index].height + 'px'
+                }).draggable().appendTo("#base");
+                    
+                $(thing).resizable();
             
-        $(thing).resizable();
+                // Creating the directive to append in the container    
+                var win = angular.element(document.createElement('window'));
+                
+                // The actually index
+                var el = $compile("<window ng-click=\'hi()\' nombre=\'myData.programas["+index+"].nombre\' bg=\'myData.programas["+index+"].bgLink\' myId=\'myData.programas["+index+"].id\'></window>")($scope);
+                angular.element(thing).append(el);
+                
+                $("#"+nombreId).addClass("active-icon");                
+                $scope.myData.programas[index].active = true;
+            
+        }else{
+            
+            console.log("Error program open.");
+            
+        }
         
-        
-        
-        // Creating the directive to append in the container    
-        var win = angular.element(document.createElement('window'));
-        var named = "'"+ $scope.myData.programas[4].nombre+"'";
-        console.log(named);
-        // The actually index
-        var el = $compile("<window ng-click=\'hi()\' nombre=\'myData.programas["+2+"].nombre\' bg=\'myData.programas["+2+"].bgLink\'>></window>")($scope);
-        angular.element(thing).append(el);
+       
         
         
     }
     
-    $scope.hi = function(){
-        console.log("hii");
+    // Func to look who is the index of the program that will be open.
+    function searchId(nombreId){
+        
+        var tam = $scope.myData.programas.length;
+        var index = 0;
+        console.log(tam);
+        for(var i = 0; i<tam; i++){
+            if($scope.myData.programas[i].id == nombreId){
+                index = i;
+            }
+        }
+        
+        return index;
+        
     }
+    
     
 });
     
