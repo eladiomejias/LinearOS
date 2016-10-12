@@ -15,7 +15,7 @@ body, html{
    /* background: linear-gradient(to left, #4776E6 , #8E54E9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     
     /* Wallpaper */
-    background: url("../img/material-wallpaper-2.jpg");
+    background: url("../img/mountain-ice.jpg");
     background-size: cover;
     
     
@@ -80,7 +80,7 @@ body, html{
   position: absolute;
   height: 40px;  
   width: 100%;
-  background-color: #2e2f35;
+  background-color: rgb(36, 38, 40);
 }
 
 #close-btn{
@@ -91,11 +91,13 @@ body, html{
 .container-id{
     width: 50px;
     background: rgba(255,255,255,0.1);
+    background: rgba(226, 69, 123, 0.86);
+
     transition: all 0.2s ease-in-out;
 }
 
 .container-id:hover {
-    background: rgba(0,0,0,0.3);
+    background: #E91E63;
 }
 
 .title-window{
@@ -389,4 +391,14 @@ body, html{
 
 .active-icon{
   border-left: 2px solid #E91E63;
+}
+
+/* Handle */
+.ui-icon, .ui-widget-content .ui-icon {
+    z-index: 0 !important;
+}
+
+.panel{
+  /* for the focus in zIndex */
+  z-index: 2;
 }

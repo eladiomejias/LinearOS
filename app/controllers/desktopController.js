@@ -5,10 +5,7 @@ app.controller('desktopController', function ($scope, $compile, staticData){
     
     //demo scopes
     $scope.hello = "Linear OS";
-    $scope.close = close;
-    
-    $scope.really = "really";
-    
+
     //animation scope
     $scope.animation = false;
     $scope.menuAnimation = false;
@@ -16,11 +13,10 @@ app.controller('desktopController', function ($scope, $compile, staticData){
     // sized window
     $scope.classNamed = false;
     
-    $scope.whatsup = "holaaa";
-    
+    // init the data json $scope
     $scope.myData;
     
-    //data
+    // getting data to $scope
     staticData.getData().success(function(theData){
         
         $scope.myData = theData;
@@ -32,12 +28,15 @@ app.controller('desktopController', function ($scope, $compile, staticData){
     });
     
     /*
+    
     staticData.getData(function (result) {
         $scope.myData = result.data;
         console.log($scope.myData.nombre);
     }, function (error) {
         console.log(error)
-    });*/
+    });
+    
+    */
     
     
     $scope.changeWindowSize = function(){
@@ -47,16 +46,14 @@ app.controller('desktopController', function ($scope, $compile, staticData){
             $scope.classNamed = true;
     }
     
+    // close program if open
     function close(event){
-        //Fix this, hide or something else
+        //fix this, hide or something else
         var button = $(event.target),
             parent = button.parent().parent().parent().parent().parent().remove();
         console.log(parent);
         
     }
-    
-
-    
   
     $scope.openProgram = function(nombreId, activeValue){
         
@@ -64,12 +61,12 @@ app.controller('desktopController', function ($scope, $compile, staticData){
 
                 //console.log(nombreId);
                 
-                //Function to search the index
+                // function to search the index
                 var index = searchId(nombreId);
                 
                 //console.log(index);
                 
-                // Creating the container of the window
+                // creating the container of the window
                var thing =  $('<div/>').attr({
                     'class': 'ui-widget-content md-whiteframe-5dp draggable default-win custom-position',
                     'style': 'width:' + $scope.myData.programas[index].width + 'px ; height: ' + $scope.myData.programas[index].height + 'px'
@@ -77,10 +74,10 @@ app.controller('desktopController', function ($scope, $compile, staticData){
                     
                 $(thing).resizable();
             
-                // Creating the directive to append in the container    
+                // creating the directive to append in the container    
                 var win = angular.element(document.createElement('window'));
                 
-                // The actually index
+                // the actually index
                 var el = $compile("<window ng-click=\'hi()\' nombre=\'myData.programas["+index+"].nombre\' bg=\'myData.programas["+index+"].bgLink\' myId=\'myData.programas["+index+"].id\'></window>")($scope);
                 angular.element(thing).append(el);
                 
@@ -89,7 +86,7 @@ app.controller('desktopController', function ($scope, $compile, staticData){
             
         }else{
             
-            console.log("Error program open.");
+            console.log("Error program open");
             
         }
         
@@ -98,12 +95,12 @@ app.controller('desktopController', function ($scope, $compile, staticData){
         
     }
     
-    // Func to look who is the index of the program that will be open.
+    // function to look who is the index of the program that will be open
     function searchId(nombreId){
         
         var tam = $scope.myData.programas.length;
         var index = 0;
-        console.log(tam);
+        //console.log(tam);
         for(var i = 0; i<tam; i++){
             if($scope.myData.programas[i].id == nombreId){
                 index = i;

@@ -28,7 +28,7 @@
       
   "programas":
   [
-    {"id":"file-1", "nombre":"Documents", "icon": "folder.svg", "active": false, "mb": 2, "bgLink": "./public/img/mockups/File.jpg", "width": 970, "height": 510}, 
+    {"id":"file-1", "nombre":"Documents", "icon": "folder.svg", "active": false, "mb": 2, "bgLink": "./public/img/mockups/file_explorer.jpg", "width": 970, "height": 510}, 
     {"id":"chrome-1", "nombre":"Chrome", "icon": "chrome-flat.svg", "active": false, "mb": 4, "bgLink": "./public/img/mockups/Chrome.png", "width": 936, "height": 464}, 
     {"id":"spotify-1", "nombre":"Spotify", "icon": "spotify.svg", "active": false, "mb": 8, "bgLink": "./public/img/mockups/Spotify.jpg", "width": 904, "height": 494},
     {"id":"atom-1", "nombre":"Atom", "icon": "atom.svg", "active": false , "mb": 5, "bgLink": "./public/img/mockups/Editor.png", "width": 952, "height": 542},

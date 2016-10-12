@@ -10,12 +10,6 @@ app.config(function($mdThemingProvider, $mdIconProvider){
         'default': '400'
     });
     /* $mdIconProvider.iconSet("avatar", 'scripts/material-icons.svg', 128); */
-    
-   
-
-
-
-
 
  $(document).ready(function(){
     
@@ -33,5 +27,4 @@ app.config(function($mdThemingProvider, $mdIconProvider){
                $(".dialog").dialog();
               
             });
-   
 });
