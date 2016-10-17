@@ -402,3 +402,24 @@ body, html{
   /* for the focus in zIndex */
   z-index: 2;
 }
+
+md-tabs md-tabs-wrapper{
+   background: #2d2d2d !important;
+ }
+ 
+ .md-tabs.md-default-theme .md-tab, md-tabs .md-tab{
+   color: rgba(255,255,255,0.6) !important;
+ }
+ 
+ md-tabs .md-tab.md-active{
+   color: rgb(230, 234, 239) !important;
+ }
+ 
+ .panel-control .ui-icon , .panel-control .ui-icon-gripsmall-diagonal-se{
+   display: none !important;
+ }
+ 
+ .panel-control .md-content{
+   color: rgba(2555,2555,255,0.55);
+    background-color: #f5f5f5;
+ }
