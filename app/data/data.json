@@ -35,6 +35,7 @@
     {"id":"drive-1", "nombre":"Google Drive", "icon": "google-drive.svg", "active": false, "mb": 7, "bgLink": "./public/img/mockups/Drive.png", "width": 941, "height": 564},
     {"id":"slack-1", "nombre":"Slack", "icon": "slack.svg", "active": false, "mb": 8, "bgLink": "./public/img/mockups/Slack.jpg", "width": 941, "height": 564},
     {"id":"skype-1", "nombre":"Skype", "icon": "skype.svg", "active": false, "mb": 12, "bgLink": "./public/img/mockups/Skype.png", "width": 951, "height": 546},
+    {"id":"hangouts-1", "nombre":"Hangouts", "icon": "hangouts.svg", "active": false, "mb": 7, "bgLink": "./public/img/mockups/Hangouts.png", "width": 951, "height": 546},
     {"id":"terminal-1", "nombre":"Terminal", "icon": "terminal.svg", "active": false, "mb": 4, "bgLink": "./public/img/mockups/Terminal.gif", "width": 451, "height": 267}
  ]
 }

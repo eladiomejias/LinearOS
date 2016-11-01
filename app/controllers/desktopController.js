@@ -4,7 +4,7 @@ var app = angular.module("myApp");
 app.controller('desktopController', function ($scope, $compile, staticData){
     
     //demo scopes
-    $scope.hello = "Linear OS";
+    $scope.hello = "Linear OS!";
 
     //animation scope
     $scope.animation = false;
