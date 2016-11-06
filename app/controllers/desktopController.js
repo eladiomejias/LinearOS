@@ -79,7 +79,9 @@ app.controller('desktopController', function ($scope, $compile, staticData){
                 var win = angular.element(document.createElement('window'));
                 
                 // the actually index
-                var el = $compile("<div class=\'new-border\' ng-click=\'closed()\'></div>"+"<window ng-click=\'hi()\' nombre=\'myData.programas["+index+"].nombre\' bg=\'myData.programas["+index+"].bgLink\' myId=\'myData.programas["+index+"].id\'></window>")($scope);
+                var el = $compile("<div class=\'new-border\' ng-click=\'closed()\' layout='row' layout-align='center center'><div layout='row' flex='95' layout-align='center center'><span class='name-btn'>"+$scope.myData.programas[index].nombre+"</span><span flex='90'></span>"
+                +"<div class='removed' ng-click='closeProgram()'></div>"
+                +"</div></div>"+"<window ng-click=\'hi()\' nombre=\'myData.programas["+index+"].nombre\' bg=\'myData.programas["+index+"].bgLink\' myId=\'myData.programas["+index+"].id\'></window>")($scope);
                 angular.element(thing).append(el);
 
                 $("#"+nombreId).addClass("active-icon");                
@@ -110,6 +112,10 @@ app.controller('desktopController', function ($scope, $compile, staticData){
         
         return index;
         
+    }
+    
+    $scope.closeProgram = function(){
+        console.log("Cerrando programa");
     }
     
     

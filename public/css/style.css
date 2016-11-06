@@ -429,3 +429,24 @@ md-tabs md-tabs-wrapper{
    position: absolute;
    top: 0; left: 0; width: 100%; height: 100%;
  }
+ 
+ .new-border{
+   position: relative;
+   height: 25px;
+   width: 100%;
+   background: rgba(37, 37, 37, 0.9);
+ }
+ 
+ .removed{
+   display: inline;
+   float: left;
+   width: 10px;
+   height: 10px;
+   background: #F3368D;
+   border-radius: 50%;
+   min-width: 10px;
+ }
+ 
+ .name-btn{
+   min-width: 200px;
+ }
