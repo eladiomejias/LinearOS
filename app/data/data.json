@@ -14,7 +14,7 @@
         "ram":  {
           "marca": "Corsair",
           "tipo": "DDR3",
-          "GB": 4,
+          "MB": 64,
           "MHz": 1333
         },
         
