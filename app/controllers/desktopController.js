@@ -71,7 +71,7 @@ app.controller('desktopController', function ($scope, $compile, staticData){
                     'class': 'ui-widget-content md-whiteframe-10dp draggable default-win custom-position',
                     'id': ''+nombreId,
                     'style': 'width:' + $scope.myData.programas[index].width + 'px ; height: ' + $scope.myData.programas[index].height + 'px'
-                }).draggable().appendTo("#base");
+                }).draggable().appendTo("#after-this");
                     
                 $(thing).resizable();
             
@@ -79,9 +79,9 @@ app.controller('desktopController', function ($scope, $compile, staticData){
                 var win = angular.element(document.createElement('window'));
                 
                 // the actually index
-                var el = $compile("<window ng-click=\'hi()\' nombre=\'myData.programas["+index+"].nombre\' bg=\'myData.programas["+index+"].bgLink\' myId=\'myData.programas["+index+"].id\'></window>")($scope);
+                var el = $compile("<div class=\'new-border\' ng-click=\'closed()\'></div>"+"<window ng-click=\'hi()\' nombre=\'myData.programas["+index+"].nombre\' bg=\'myData.programas["+index+"].bgLink\' myId=\'myData.programas["+index+"].id\'></window>")($scope);
                 angular.element(thing).append(el);
-                
+
                 $("#"+nombreId).addClass("active-icon");                
                 $scope.myData.programas[index].active = true;
             
