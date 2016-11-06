@@ -69,7 +69,7 @@ app.controller('desktopController', function ($scope, $compile, staticData){
                 // creating the container of the window
                var thing =  $('<div/>').attr({
                     'class': 'ui-widget-content md-whiteframe-10dp draggable default-win custom-position',
-                    'id': nombreId,
+                    'id': ''+nombreId,
                     'style': 'width:' + $scope.myData.programas[index].width + 'px ; height: ' + $scope.myData.programas[index].height + 'px'
                 }).draggable().appendTo("#base");
                     
