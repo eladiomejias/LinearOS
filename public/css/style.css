@@ -434,7 +434,7 @@ md-tabs md-tabs-wrapper{
    position: relative;
    height: 25px;
    width: 100%;
-   background: rgba(37, 37, 37, 0.9);
+   background: transparent;
  }
  
  .removed{
@@ -449,4 +449,13 @@ md-tabs md-tabs-wrapper{
  
  .name-btn{
    min-width: 200px;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    color: #777575;
+    letter-spacing: 5px;
  }
+ 
+ .ui-widget-content {
+    background: rgba(255, 255, 255, 0.41) !important;
+    color: #333333;
+}
