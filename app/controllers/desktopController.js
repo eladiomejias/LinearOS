@@ -16,6 +16,9 @@ app.controller('desktopController', function ($scope, $compile, staticData){
     // init the data json $scope
     $scope.myData;
     
+    //Code for program open
+    var add = "-program";
+    
     // getting data to $scope
     staticData.getData().success(function(theData){
         
@@ -46,14 +49,6 @@ app.controller('desktopController', function ($scope, $compile, staticData){
             $scope.classNamed = true;
     }
     
-    // close program if open
-    function close(event){
-        //fix this, hide or something else
-        var button = $(event.target),
-            parent = button.parent().parent().parent().parent().parent().remove();
-        console.log(parent);
-        
-    }
   
     $scope.openProgram = function(nombreId, activeValue){
         
@@ -64,12 +59,14 @@ app.controller('desktopController', function ($scope, $compile, staticData){
                 // function to search the index
                 var index = searchId(nombreId);
                 
-                //console.log(index);
+                // my created id
+                var createdId = nombreId;
+                createdId += add;
                 
                 // creating the container of the window
                var thing =  $('<div/>').attr({
                     'class': 'ui-widget-content md-whiteframe-10dp draggable default-win custom-position',
-                    'id': ''+nombreId,
+                    'id': ''+createdId,
                     'style': 'width:' + $scope.myData.programas[index].width + 'px ; height: ' + $scope.myData.programas[index].height + 'px'
                 }).draggable().appendTo("#after-this");
                     
@@ -80,9 +77,10 @@ app.controller('desktopController', function ($scope, $compile, staticData){
                 
                 // the actually index
                 var el = $compile("<div class=\'new-border\' layout='row' layout-align='center center'><div layout='row' flex='95' layout-align='center center'><span class='name-btn'>"+$scope.myData.programas[index].nombre+"</span><span flex='90'></span>"
-                +"<div class='removed' ng-click='closeProgram()'></div>"
-                +"</div></div>"+"<window ng-click=\'hi()\' nombre=\'myData.programas["+index+"].nombre\' bg=\'myData.programas["+index+"].bgLink\' myId=\'myData.programas["+index+"].id\'></window>")($scope);
+                +"<div class='removed' ng-click='closeProgram("+index+")'></div>"
+                +"</div></div>"+"<window ng-click=\'hi()\' nombre=\'myData.programas["+index+"].nombre\' bg=\'myData.programas["+index+"].bgLink\' myid=\'myData.programas["+index+"].id\'></window>")($scope);
                 angular.element(thing).append(el);
+                
 
                 $("#"+nombreId).addClass("active-icon");                
                 $scope.myData.programas[index].active = true;
@@ -114,10 +112,16 @@ app.controller('desktopController', function ($scope, $compile, staticData){
         
     }
     
-    $scope.closeProgram = function(){
-        console.log();
+    $scope.closeProgram = function(index){
+        console.log("Borrar programa");
+       var search = $scope.myData.programas[index].id;
+       search += add;
+       $("#"+search).remove();
+
+        
     }
     
     
+ 
 });
     

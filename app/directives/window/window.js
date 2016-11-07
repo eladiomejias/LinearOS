@@ -4,7 +4,7 @@ app.directive('window', function(){
         return {
             restrict: 'E',
             scope: {
-                myId: "=",
+                myid: "=",
                 nombre: "=",
                 bg: "="
             },
