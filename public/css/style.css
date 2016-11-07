@@ -456,6 +456,6 @@ md-tabs md-tabs-wrapper{
  }
  
  .ui-widget-content {
-    background: rgba(255, 255, 255, 0.41) !important;
+    background: rgba(255, 255, 255, 0.7) !important;
     color: #333333;
 }
