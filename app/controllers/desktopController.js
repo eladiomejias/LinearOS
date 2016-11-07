@@ -112,15 +112,22 @@ app.controller('desktopController', function ($scope, $compile, staticData){
         
     }
     
-    $scope.closeProgram = function(index){
-        console.log("Borrar programa");
+   $scope.closeProgram = function(index){
+        // enter in the close programs
+       console.log("Borrar programa");
        var search = $scope.myData.programas[index].id;
-       search += add;
-       $("#"+search).remove();
+       var searchIndexProgram = search;
+       searchIndexProgram += add;
+       // calls this
+       $("#"+searchIndexProgram).remove();
+       // remove class
+       $("#"+search).removeClass("active-icon");
+       // it's no longer act
+       // so we change the scope value
+       $scope.myData.programas[index].active = false;
 
         
     }
-    
     
  
 });
