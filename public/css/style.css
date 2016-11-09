@@ -499,3 +499,16 @@ md-tabs md-tabs-wrapper{
     margin: 10px !important;
     font-size: 0.9em !important;
 }
+
+/* Classes dependiendo del status */
+.activo{
+    background: #ADF7D1 !important;
+}
+
+.bloqueado{
+    background: #10DDC2 !important;
+}
+
+.status-indicator{
+    text-transform: capitalize;
+}

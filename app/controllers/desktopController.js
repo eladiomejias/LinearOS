@@ -84,6 +84,10 @@ app.controller('desktopController', function ($scope, $compile, staticData){
 
                 $("#"+nombreId).addClass("active-icon");                
                 $scope.myData.programas[index].active = true;
+                
+                // Inicializar si todo corrio perfecto
+                $scope.myData.programas[index].stats = "activo";
+                
             
         }else{
             

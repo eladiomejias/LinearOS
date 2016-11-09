@@ -31,8 +31,8 @@
                   <p class="description-text">Listado de los procesos y sus estados - Todos estos procesos son obtenidos del data principal  </p>
                   <div ng-repeat="programs in myData.programas" ng-if="programs.active == true">
                      <section class="container-process">
-                       <div class="status-programs"></div>
-                        <div class="content">{{programs.nombre}}</div>
+                       <div class="status-programs" ng-class="programs.stats"></div>
+                        <div class="content">{{programs.nombre}} - Estado: <span class="status-indicator">{{programs.stats}}</span> - Memoria RAM: {{programs.mb}}mb</div>
                       </section> 
                   </div>
                 </md-content>
