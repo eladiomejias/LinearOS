@@ -39,7 +39,8 @@
     {"id":"terminal-1", "nombre":"Terminal", "icon": "terminal.svg", "active": false, "mb": 4, "bgLink": "./public/img/mockups/Terminal.gif", "width": 451, "height": 267},
     {"id":"twitter-1", "nombre":"Twitter", "icon": "twitter.svg", "active": false, "mb": 4, "bgLink": "./public/img/mockups/Twitter.png", "width": 922, "height": 684},
     {"id":"calculator-1", "nombre":"Calculator", "icon": "calculator.svg", "active": false, "mb": 4, "bgLink": "./public/img/mockups/calculator-full.png", "width": 326, "height": 548},
-    {"id":"ps-1", "nombre":"Photoshop", "icon": "ps.svg", "active": false, "mb": 4, "bgLink": "./public/img/mockups/ps.jpg", "width": 884, "height": 462}
+    {"id":"ps-1", "nombre":"Photoshop", "icon": "ps.svg", "active": false, "mb": 4, "bgLink": "./public/img/mockups/ps.jpg", "width": 884, "height": 462},
+    {"id":"webcam-1", "nombre":"Webcam", "icon": "webcam.svg", "active": false, "mb": 3, "bgLink": "./public/img/mockups/webcamphoto.jpg", "width": 800, "height": 600}
 
 
  ]

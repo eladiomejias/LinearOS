@@ -435,6 +435,7 @@ md-tabs md-tabs-wrapper{
    height: 25px;
    width: 100%;
    background: transparent;
+   width: 100%;
  }
  
  .removed{
@@ -445,6 +446,12 @@ md-tabs md-tabs-wrapper{
    background: #F3368D;
    border-radius: 50%;
    min-width: 10px;
+   cursor: pointer;
+   transition: all 0.2s ease-in-out;
+ }
+ 
+ .removed:hover{
+     background: #E84A5F;
  }
  
  .name-btn{
@@ -458,4 +465,36 @@ md-tabs md-tabs-wrapper{
  .ui-widget-content {
     background: rgba(255, 255, 255, 0.7) !important;
     color: #333333;
+}
+
+.titled{
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.status-programs{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    top: 50%;
+    transform: translate(0%, -50%);
+    position: absolute;
+}
+
+.content{
+        padding-left: 25px;
+    font-size: 0.8em;
+}
+
+.container-process{
+    position: relative;
+    /* margin-bottom: 5px; */
+    border-bottom: 1px solid #e6e6e6;
+    background: rgba(237, 237, 241, 0.4);
+    padding: 7px;
+}
+
+.description-text{
+    margin: 10px;
 }
