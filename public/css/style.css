@@ -17,9 +17,13 @@ body, html{
     /* Wallpaper */
     background: url("../img/mountain2.jpg");
     background-size: cover;
-    
-    
 }
+
+
+body{
+    cursor: url("../img/mockups/cursor.png"), auto !important;
+}
+
 
 #bar-container{
     height: 100%;
@@ -434,7 +438,7 @@ md-tabs md-tabs-wrapper{
    position: relative;
    height: 25px;
    width: 100%;
-   background: transparent;
+   background: rgba(253, 253, 253, 0.67);
    width: 100%;
  }
  
@@ -491,8 +495,13 @@ md-tabs md-tabs-wrapper{
     position: relative;
     /* margin-bottom: 5px; */
     border-bottom: 1px solid #e6e6e6;
+    transition: all 0.2s ease-in-out;
     background: rgba(237, 237, 241, 0.4);
     padding: 7px;
+}
+
+.container-process:hover{
+    background: #eaeaea;
 }
 
 .description-text{

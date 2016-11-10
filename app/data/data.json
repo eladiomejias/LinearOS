@@ -28,19 +28,19 @@
       
   "programas":
   [
-    {"id":"file-1", "nombre":"Documents", "icon": "folder.svg", "active": false, "mb": 2, "bgLink": "./public/img/mockups/file_explorer.jpg", "width": 840, "height": 544, "stats":"apg"}, 
-    {"id":"chrome-1", "nombre":"Chrome", "icon": "chrome-flat.svg", "active": false, "mb": 4, "bgLink": "./public/img/mockups/Chrome.png", "width": 936, "height": 464, "stats":"apg"}, 
-    {"id":"spotify-1", "nombre":"Spotify", "icon": "spotify.svg", "active": false, "mb": 8, "bgLink": "./public/img/mockups/Spotify.jpg", "width": 904, "height": 494, "stats":"apg"},
-    {"id":"atom-1", "nombre":"Atom", "icon": "atom.svg", "active": false , "mb": 5, "bgLink": "./public/img/mockups/Editor.png", "width": 952, "height": 542, "status":"apg"},
-    {"id":"drive-1", "nombre":"Google Drive", "icon": "google-drive.svg", "active": false, "mb": 7, "bgLink": "./public/img/mockups/Drive.png", "width": 941, "height": 564, "stats":"apg"},
-    {"id":"slack-1", "nombre":"Slack", "icon": "slack.svg", "active": false, "mb": 8, "bgLink": "./public/img/mockups/Slack.jpg", "width": 941, "height": 564, "stats":"apg"},
-    {"id":"skype-1", "nombre":"Skype", "icon": "skype.svg", "active": false, "mb": 12, "bgLink": "./public/img/mockups/Skype.png", "width": 951, "height": 546, "stats":"apg"},
-    {"id":"hangouts-1", "nombre":"Hangouts", "icon": "hangouts.svg", "active": false, "mb": 7, "bgLink": "./public/img/mockups/Hangouts.png", "width": 951, "height": 546, "stats":"apg"},
-    {"id":"terminal-1", "nombre":"Terminal", "icon": "terminal.svg", "active": false, "mb": 4, "bgLink": "./public/img/mockups/Terminal.gif", "width": 451, "height": 267, "stats":"apg"},
-    {"id":"twitter-1", "nombre":"Twitter", "icon": "twitter.svg", "active": false, "mb": 4, "bgLink": "./public/img/mockups/Twitter.png", "width": 922, "height": 684, "stats":"apg"},
-    {"id":"calculator-1", "nombre":"Calculator", "icon": "calculator.svg", "active": false, "mb": 4, "bgLink": "./public/img/mockups/calculator-full.png", "width": 326, "height": 548, "stats":"apg"},
-    {"id":"ps-1", "nombre":"Photoshop", "icon": "ps.svg", "active": false, "mb": 4, "bgLink": "./public/img/mockups/ps.jpg", "width": 884, "height": 462, "status":"apg"},
-    {"id":"webcam-1", "nombre":"Webcam", "icon": "webcam.svg", "active": false, "mb": 3, "bgLink": "./public/img/mockups/webcamphoto.jpg", "width": 800, "height": 600, "stats":"apg"}
+    {"id":"file-1", "nombre":"Documents", "icon": "folder.svg", "active": false, "mb": 2, "bgLink": "./public/img/mockups/file_explorer.jpg", "width": 840, "height": 544, "stats":"apg", "quantum": 2, "req": []}, 
+    {"id":"chrome-1", "nombre":"Chrome", "icon": "chrome-flat.svg", "active": false, "mb": 4, "bgLink": "./public/img/mockups/Chrome.png", "width": 936, "height": 464, "stats":"apg", "quantum": 2, "req": [] }, 
+    {"id":"spotify-1", "nombre":"Spotify", "icon": "spotify.svg", "active": false, "mb": 8, "bgLink": "./public/img/mockups/Spotify.jpg", "width": 904, "height": 494, "stats":"apg", "quantum": 4, "req": []},
+    {"id":"atom-1", "nombre":"Atom", "icon": "atom.svg", "active": false , "mb": 5, "bgLink": "./public/img/mockups/Editor.png", "width": 952, "height": 542, "status":"apg", "quantum": 5, "req": []},
+    {"id":"drive-1", "nombre":"Google Drive", "icon": "google-drive.svg", "active": false, "mb": 7, "bgLink": "./public/img/mockups/Drive.png", "width": 941, "height": 564, "stats":"apg", "quantum": 5, "req": []},
+    {"id":"slack-1", "nombre":"Slack", "icon": "slack.svg", "active": false, "mb": 8, "bgLink": "./public/img/mockups/Slack.jpg", "width": 941, "height": 564, "stats":"apg", "quantum": 8, "req": []},
+    {"id":"skype-1", "nombre":"Skype", "icon": "skype.svg", "active": false, "mb": 12, "bgLink": "./public/img/mockups/Skype.png", "width": 951, "height": 546, "stats":"apg", "quantum": 10, "req": []},
+    {"id":"hangouts-1", "nombre":"Hangouts", "icon": "hangouts.svg", "active": false, "mb": 7, "bgLink": "./public/img/mockups/Hangouts.png", "width": 951, "height": 546, "stats":"apg", "quantum": 12, "req": []},
+    {"id":"terminal-1", "nombre":"Terminal", "icon": "terminal.svg", "active": false, "mb": 4, "bgLink": "./public/img/mockups/Terminal.gif", "width": 451, "height": 267, "stats":"apg", "quantum": 6, "req": []},
+    {"id":"twitter-1", "nombre":"Twitter", "icon": "twitter.svg", "active": false, "mb": 4, "bgLink": "./public/img/mockups/Twitter.png", "width": 922, "height": 684, "stats":"apg", "quantum": 7, "req": []},
+    {"id":"calculator-1", "nombre":"Calculator", "icon": "calculator.svg", "active": false, "mb": 4, "bgLink": "./public/img/mockups/calculator-full.png", "width": 326, "height": 548, "stats":"apg", "quantum": 5, "req": []},
+    {"id":"ps-1", "nombre":"Photoshop", "icon": "ps.svg", "active": false, "mb": 4, "bgLink": "./public/img/mockups/ps.jpg", "width": 884, "height": 462, "status":"apg", "quantum": 6, "req": []},
+    {"id":"webcam-1", "nombre":"Webcam", "icon": "webcam.svg", "active": false, "mb": 3, "bgLink": "./public/img/mockups/webcamphoto.jpg", "width": 800, "height": 600, "stats":"apg", "quantum": 7, "req": []}
 
 
  ]

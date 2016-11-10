@@ -1,5 +1,5 @@
 <div class='new-border' layout='row' layout-align='center center'><div layout='row' flex='95' layout-align='center center'><span class='name-btn'>Administrador</span><span flex='90'></span>
-<div class='removed' ng-click=''></div></div></div>
+<div class='removed' ng-click="panelActivo = !panelActivo" ng-class="{ active: animations }"></div></div></div>
 
 <div class="panel-control">
    <!-- <div class="title-window-top window-relative" layout="row"  layout-align="center center">
@@ -29,10 +29,10 @@
                   <h1 class="md-display-2 titled">Procesos</h1>
                    <md-divider ></md-divider>
                   <p class="description-text">Listado de los procesos y sus estados - Todos estos procesos son obtenidos de las ventanas que son abiertas.  </p>
-                  <div ng-repeat="programs in myData.programas" ng-if="programs.active == true">
+                  <div ng-repeat="programs in myData.programas" >
                      <section class="container-process">
                        <div class="status-programs" ng-class="programs.stats"></div>
-                        <div class="content">{{programs.nombre}} - Estado: <span class="status-indicator">{{programs.stats}}</span> - Memoria RAM: {{programs.mb}}mb</div>
+                        <div class="content">{{programs.nombre}} - Estado: <span class="status-indicator">{{programs.stats}}</span> - Memoria RAM: {{programs.mb}}mb - Quantum: {{programs.quantum}}s</div>
                       </section> 
                   </div>
                 </md-content>

@@ -19,6 +19,9 @@ app.controller('desktopController', function ($scope, $compile, staticData){
     //Code for program open
     var add = "-program";
     
+    //var for deadlock
+    $scope.inProcess = [];
+    
     // getting data to $scope
     staticData.getData().success(function(theData){
         
@@ -129,6 +132,8 @@ app.controller('desktopController', function ($scope, $compile, staticData){
        // it's no longer act
        // so we change the scope value
        $scope.myData.programas[index].active = false;
+       $scope.myData.programas[index].stats = "apg";
+
 
         
     }
