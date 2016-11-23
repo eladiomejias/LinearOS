@@ -65,8 +65,11 @@ app.controller('desktopController', function ($scope, $compile, staticData){
                 // my created id
                 var createdId = nombreId;
                 createdId += add;
-                
-                // creating the container of the window
+            
+                var valor = verificar(index);
+                console.log(valor);
+                if(valor){
+                     // creating the container of the window
                var thing =  $('<div/>').attr({
                     'class': 'ui-widget-content md-whiteframe-10dp draggable default-win custom-position',
                     'id': ''+createdId,
@@ -84,12 +87,13 @@ app.controller('desktopController', function ($scope, $compile, staticData){
                 +"</div></div>"+"<window ng-click=\'hi()\' nombre=\'myData.programas["+index+"].nombre\' bg=\'myData.programas["+index+"].bgLink\' myid=\'myData.programas["+index+"].id\'></window>")($scope);
                 angular.element(thing).append(el);
                 
-
-                $("#"+nombreId).addClass("active-icon");                
-                $scope.myData.programas[index].active = true;
-                
-                // Inicializar si todo corrio perfecto
-                $scope.myData.programas[index].stats = "activo";
+                    $("#"+nombreId).addClass("active-icon");                
+                    $scope.myData.programas[index].active = true;
+                    
+                    // Inicializar si todo corrio perfecto
+                    $scope.myData.programas[index].stats = "activo";
+                }
+               
                 
             
         }else{
@@ -136,6 +140,36 @@ app.controller('desktopController', function ($scope, $compile, staticData){
 
 
         
+    }
+    
+    // verificar requerimiento
+    function verificar(index){
+       var programa =  $scope.myData.programas[index];
+       var band = true;
+       
+       if($scope.inProcess.length == 0){
+           console.log("Primera vez");
+           programa.req.forEach(
+               function(item, index){
+                   $scope.inProcess.push(item);
+               }
+            );
+       }else{
+           console.log("Segunda");
+            $scope.inProcess.forEach(function(item, index){
+               programa.req.forEach(function (requerimiento, requerimientoIndex){
+                   if(requerimiento == item){
+                       band = false;
+                   }else{
+                     $scope.inProcess.push(requerimiento);
+
+                   }
+               });
+            });
+            
+       }
+       
+       return band;
     }
     
  
