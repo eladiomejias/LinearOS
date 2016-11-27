@@ -94,10 +94,17 @@ app.controller('desktopController', function ($scope, $compile, staticData){
                     $scope.myData.programas[index].stats = "activo";
                 }else{
                     console.log("Interbloqueo");
+                    // When deadlock is happening
                     var timing = $scope.myData.programas[index].quantum * 1000;
                     $scope.myData.programas[index].stats = "espera";
-                    setTimeout(function(){  $scope.myData.programas[index].stats = "apg" }, timing);
+                     setTimeout(function () {
+                            $scope.$apply(function () {
+                                $scope.myData.programas[index].stats = "block";
+                            });
+                        }, timing);
+
                 }
+                
                
                 
             
@@ -110,6 +117,10 @@ app.controller('desktopController', function ($scope, $compile, staticData){
        
         
         
+    }
+    
+    var actualizar = function(programStat){
+        program
     }
     
     // function to look who is the index of the program that will be open
