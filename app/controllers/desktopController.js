@@ -154,19 +154,25 @@ app.controller('desktopController', function ($scope, $compile, staticData){
                    $scope.inProcess.push(item);
                }
             );
+            band = false;
        }else{
            console.log("Segunda");
             $scope.inProcess.forEach(function(item, index){
                programa.req.forEach(function (requerimiento, requerimientoIndex){
                    if(requerimiento == item){
                        band = false;
-                   }else{
-                     $scope.inProcess.push(requerimiento);
-
                    }
                });
             });
             
+       }
+       
+       if(band==true){
+           programa.req.forEach(
+               function(item, index){
+                   $scope.inProcess.push(item);
+               }
+            );
        }
        
        return band;
