@@ -92,13 +92,18 @@ app.controller('desktopController', function ($scope, $compile, staticData){
                     
                     // Inicializar si todo corrio perfecto
                     $scope.myData.programas[index].stats = "activo";
+                }else{
+                    console.log("Interbloqueo");
+                    var timing = $scope.myData.programas[index].quantum * 1000;
+                    $scope.myData.programas[index].stats = "espera";
+                    setTimeout(function(){  $scope.myData.programas[index].stats = "apg" }, timing);
                 }
                
                 
             
         }else{
             
-            console.log("Error program open");
+            console.log("Error program open ");
             
         }
         
@@ -149,7 +154,6 @@ app.controller('desktopController', function ($scope, $compile, staticData){
      //Deleting
      var programa =  $scope.myData.programas[index];
      $scope.inProcess = $scope.inProcess.filter(item => programa.req.indexOf(item) === -1);
-
     }
     
     // verificar requerimiento

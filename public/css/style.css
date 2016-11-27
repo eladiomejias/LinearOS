@@ -509,13 +509,21 @@ md-tabs md-tabs-wrapper{
     font-size: 0.81em !important;
 }
 
-/* Classes dependiendo del status */
+/* Clases dependiendo del status */
 .activo{
     background: #ADF7D1 !important;
 }
 
 .bloqueado{
     background: #10DDC2 !important;
+}
+
+.espera{
+    background: yellow !important;
+}
+
+.block{
+    background: #F23557 !important;
 }
 
 .status-indicator{
