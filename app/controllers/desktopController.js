@@ -137,9 +137,19 @@ app.controller('desktopController', function ($scope, $compile, staticData){
        // so we change the scope value
        $scope.myData.programas[index].active = false;
        $scope.myData.programas[index].stats = "apg";
+       //deleting from array inProcess
+       deletingProcess(index);
 
 
         
+    }
+    
+    // Deleting in process program in closing
+    function deletingProcess(index){
+     //Deleting
+     var programa =  $scope.myData.programas[index];
+     $scope.inProcess = $scope.inProcess.filter(item => programa.req.indexOf(item) === -1);
+
     }
     
     // verificar requerimiento
@@ -147,16 +157,7 @@ app.controller('desktopController', function ($scope, $compile, staticData){
        var programa =  $scope.myData.programas[index];
        var band = true;
        
-       if($scope.inProcess.length == 0){
-           console.log("Primera vez");
-           programa.req.forEach(
-               function(item, index){
-                   $scope.inProcess.push(item);
-               }
-            );
-            band = false;
-       }else{
-           console.log("Segunda");
+       if($scope.inProcess.length != 0){
             $scope.inProcess.forEach(function(item, index){
                programa.req.forEach(function (requerimiento, requerimientoIndex){
                    if(requerimiento == item){
@@ -164,7 +165,6 @@ app.controller('desktopController', function ($scope, $compile, staticData){
                    }
                });
             });
-            
        }
        
        if(band==true){
