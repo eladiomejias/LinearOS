@@ -3,21 +3,28 @@
   "apellido": "Mejias",
   "sistema": "Linear OS",
   "picture": "./public/img/me.png",
-  "maquina": {
+  "ramProperties":  {
+    "marca": "Corsair",
+    "tipo": "DDR3",
+    "mb": 64,
+    "mhz": 1333
+  },
+  "maquina":
+  {
         "procesador": {
             "marca": "Intel",
             "tipo": "Core i5",
             "GHz": 3.2,
             "socket": 1150
         },
-        
-        "ram":  {
+
+        "RAM":  {
           "marca": "Corsair",
           "tipo": "DDR3",
           "MB": 64,
           "MHz": 1333
         },
-        
+
         "disco":    {
           "marca": "Samsung",
           "tipo": "SSD 850 EVO Interno",
@@ -25,22 +32,22 @@
           "conector": "SATA 3.0 gb"
         }
       },
-      
+
   "programas":
   [
-    {"id":"file-1", "nombre":"Documents", "icon": "folder.svg", "active": false, "mb": 2, "bgLink": "./public/img/mockups/file_explorer.jpg", "width": 840, "height": 544, "stats":"apg", "quantum": 2, "req": [8]}, 
-    {"id":"chrome-1", "nombre":"Chrome", "icon": "chrome-flat.svg", "active": false, "mb": 4, "bgLink": "./public/img/mockups/Chrome.png", "width": 936, "height": 464, "stats":"apg", "quantum": 2, "req": [7] }, 
-    {"id":"spotify-1", "nombre":"Spotify", "icon": "spotify.svg", "active": false, "mb": 8, "bgLink": "./public/img/mockups/Spotify.jpg", "width": 904, "height": 494, "stats":"apg", "quantum": 4, "req": [8,7]},
-    {"id":"atom-1", "nombre":"Atom", "icon": "atom.svg", "active": false , "mb": 5, "bgLink": "./public/img/mockups/Editor.png", "width": 952, "height": 542, "status":"apg", "quantum": 5, "req": [14,5]},
-    {"id":"drive-1", "nombre":"Google Drive", "icon": "google-drive.svg", "active": false, "mb": 7, "bgLink": "./public/img/mockups/Drive.png", "width": 941, "height": 564, "stats":"apg", "quantum": 5, "req": [30, 31]},
-    {"id":"slack-1", "nombre":"Slack", "icon": "slack.svg", "active": false, "mb": 8, "bgLink": "./public/img/mockups/Slack.jpg", "width": 941, "height": 564, "stats":"apg", "quantum": 8, "req": [18,9]},
-    {"id":"skype-1", "nombre":"Skype", "icon": "skype.svg", "active": false, "mb": 12, "bgLink": "./public/img/mockups/Skype.png", "width": 951, "height": 546, "stats":"apg", "quantum": 10, "req": [1,2]},
-    {"id":"hangouts-1", "nombre":"Hangouts", "icon": "hangouts.svg", "active": false, "mb": 7, "bgLink": "./public/img/mockups/Hangouts.png", "width": 951, "height": 546, "stats":"apg", "quantum": 12, "req": [10,11]},
-    {"id":"terminal-1", "nombre":"Terminal", "icon": "terminal.svg", "active": false, "mb": 4, "bgLink": "./public/img/mockups/Terminal.gif", "width": 451, "height": 267, "stats":"apg", "quantum": 6, "req": [20, 21]},
-    {"id":"twitter-1", "nombre":"Twitter", "icon": "twitter.svg", "active": false, "mb": 4, "bgLink": "./public/img/mockups/Twitter.png", "width": 922, "height": 684, "stats":"apg", "quantum": 7, "req": [22, 24]},
-    {"id":"calculator-1", "nombre":"Calculator", "icon": "calculator.svg", "active": false, "mb": 4, "bgLink": "./public/img/mockups/calculator-full.png", "width": 326, "height": 548, "stats":"apg", "quantum": 5, "req": [19,2]},
-    {"id":"ps-1", "nombre":"Photoshop", "icon": "ps.svg", "active": false, "mb": 4, "bgLink": "./public/img/mockups/ps.jpg", "width": 884, "height": 462, "status":"apg", "quantum": 6, "req": [28, 27]},
-    {"id":"webcam-1", "nombre":"Webcam", "icon": "webcam.svg", "active": false, "mb": 3, "bgLink": "./public/img/mockups/webcamphoto.jpg", "width": 800, "height": 600, "stats":"apg", "quantum": 7, "req": [2,4]}
+    {"id":"file-1", "nombre":"Documents", "icon": "folder.svg", "active": false, "mb": 2, "bgLink": "./public/img/mockups/file_explorer.jpg", "width": 840, "height": 544, "stats":"apg", "quantum": 2, "req": [1]},
+    {"id":"chrome-1", "nombre":"Chrome", "icon": "chrome-flat.svg", "active": false, "mb": 4, "bgLink": "./public/img/mockups/Chrome.png", "width": 936, "height": 464, "stats":"apg", "quantum": 2, "req": [2] },
+    {"id":"spotify-1", "nombre":"Spotify", "icon": "spotify.svg", "active": false, "mb": 8, "bgLink": "./public/img/mockups/Spotify.jpg", "width": 904, "height": 494, "stats":"apg", "quantum": 4, "req": [1,2]},
+    {"id":"atom-1", "nombre":"Atom", "icon": "atom.svg", "active": false , "mb": 5, "bgLink": "./public/img/mockups/Editor.png", "width": 952, "height": 542, "status":"apg", "quantum": 5, "req": [3]},
+    {"id":"drive-1", "nombre":"Google Drive", "icon": "google-drive.svg", "active": false, "mb": 7, "bgLink": "./public/img/mockups/Drive.png", "width": 941, "height": 564, "stats":"apg", "quantum": 5, "req": [4]},
+    {"id":"slack-1", "nombre":"Slack", "icon": "slack.svg", "active": false, "mb": 8, "bgLink": "./public/img/mockups/Slack.jpg", "width": 941, "height": 564, "stats":"apg", "quantum": 8, "req": [5]},
+    {"id":"skype-1", "nombre":"Skype", "icon": "skype.svg", "active": false, "mb": 12, "bgLink": "./public/img/mockups/Skype.png", "width": 951, "height": 546, "stats":"apg", "quantum": 10, "req": [6]},
+    {"id":"hangouts-1", "nombre":"Hangouts", "icon": "hangouts.svg", "active": false, "mb": 7, "bgLink": "./public/img/mockups/Hangouts.png", "width": 951, "height": 546, "stats":"apg", "quantum": 12, "req": [7]},
+    {"id":"terminal-1", "nombre":"Terminal", "icon": "terminal.svg", "active": false, "mb": 4, "bgLink": "./public/img/mockups/Terminal.gif", "width": 451, "height": 267, "stats":"apg", "quantum": 6, "req": [8]},
+    {"id":"twitter-1", "nombre":"Twitter", "icon": "twitter.svg", "active": false, "mb": 4, "bgLink": "./public/img/mockups/Twitter.png", "width": 922, "height": 684, "stats":"apg", "quantum": 7, "req": [9]},
+    {"id":"calculator-1", "nombre":"Calculator", "icon": "calculator.svg", "active": false, "mb": 4, "bgLink": "./public/img/mockups/calculator-full.png", "width": 326, "height": 548, "stats":"apg", "quantum": 5, "req": [10]},
+    {"id":"ps-1", "nombre":"Photoshop", "icon": "ps.svg", "active": false, "mb": 4, "bgLink": "./public/img/mockups/ps.jpg", "width": 884, "height": 462, "status":"apg", "quantum": 6, "req": [11]},
+    {"id":"webcam-1", "nombre":"Webcam", "icon": "webcam.svg", "active": false, "mb": 3, "bgLink": "./public/img/mockups/webcamphoto.jpg", "width": 800, "height": 600, "stats":"apg", "quantum": 7, "req": [12, 6]}
 
 
  ]

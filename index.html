@@ -14,7 +14,7 @@
 
 <!-- Loads ng-app / body -->
 <body ng-app="myApp" ng-cloak ng-controller="desktopController" layout="column" id="base">
-    
+
         <div id="menu" ng-class="{ active: menuAnimation }" class=" md-whiteframe-15dp" ng-show="menuAnimation">
               <div id="menu-container">
                 <!-- ng-repeat -->
@@ -23,43 +23,43 @@
                   </div>
               </div>
          </div>
-    
+
     <div layout="row" layout-align="start end" id="bar-container">
-    
+
       <div id="bar" flex="100" layout='row'>
-          
+
           <div id="icon-menu" flex="5" layout="row" layout-align="center center">
-            <div class="container-icon md-whiteframe-2dp"><md-button class="md-icon-button icon-desktop" ng-click="menuAnimation = !menuAnimation" aria-label="Favorite" md-ink-ripple="#FFF"><md-icon class="material-icons md-light md-48">apps</md-icon></md-button></div>          
+            <div class="container-icon md-whiteframe-2dp"><md-button class="md-icon-button icon-desktop" ng-click="menuAnimation = !menuAnimation" aria-label="Favorite" md-ink-ripple="#FFF"><md-icon class="material-icons md-light md-48">apps</md-icon></md-button></div>
           </div>
-          
+
           <!-- Space -->
           <span flex="85"></span>
           <!-- End space -->
-          
+
           <!-- Flex del espacio restante / afectado con min-width -->
           <div flex id="bar-right" layout="row" layout-align="center center">
             <div class="container-icon md-whiteframe-2dp" flex="100" layout="row" layout-align="">
-                <div id="time" class="whiter" flex="30" layout-align="center center" layout="row"><span>12:00 PM</span></div>
+                <div id="time" class="whiter" flex="30" layout-align="center center" layout="row"><span>{{ date | date: 'EEE - d hh:mm a'}}</span></div>
                 <md-button class="md-icon-button icon-desktop" ng-click="panelActivo = !panelActivo" ng-class="{ active: animations }" aria-label="Favorite" md-no-ink="true"><md-icon class="material-icons md-light md-48 whiter"> settings </md-icon></md-button>
                 <md-button class="md-icon-button icon-desktop " md-no-ink="true" aria-label="Favorite" md-ink-ripple="#FFF"><md-icon class="material-icons md-light md-48 whiter"> battery_full </md-icon></md-button>
                 <div flex layout-align="center center" layout="row">
                     <img src="./public/img/me.png" class="md-avatar" alt="Me" />
                     </div>
-            </div>          
+            </div>
           </div>
-          
+
       </div>
-      
+
     </div>
-    
-    <!-- Manually creates the windows because a visual bug with ng-repeat 
+
+    <!-- Manually creates the windows because a visual bug with ng-repeat
   <div class="ui-widget-content md-whiteframe-5dp draggable default-win" layout="row" id="{{ myData.programas[4].id }}" ng-style="{'width': myData.programas[4].width, 'height': myData.programas[4].height}">
             <window myId="myData.programas[4].id" nombre="myData.programas[4].nombre" bg="myData.programas[4].bgLink"></window>
     </diV>
     <div class="ui-widget-content md-whiteframe-5dp draggable default-win" layout="row" id="{{ myData.programas[7].id }}" ng-style="{'width': myData.programas[7].width, 'height': myData.programas[7].height}">
             <window myId="myData.programas[7].id" nombre="myData.programas[7].nombre" bg="myData.programas[7].bgLink"></window>
     </diV>-->
-    
+
     <!-- Panel Control -->
      <div class="ui-widget-content md-whiteframe-11dp panel" layout="row" ng-show="panelActivo" id="panel-cont">
            <my-panel></my-panel>
@@ -79,4 +79,3 @@
     <script src="public/js/drag-drop/angular-dragdrop.min.js"></script>
 </body>
 </html>
-

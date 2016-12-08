@@ -4,10 +4,10 @@
 <div class="panel-control">
    <!-- <div class="title-window-top window-relative" layout="row"  layout-align="center center">
                  <div layout="row" flex="90" class="title-window" layout-align="center center"><span>Panel Control</span></div>
-                 
+
                     <!-- Space -->
                    <!-- <span flex="10"></span>
-                  
+
            <!-- <div class="container-id">
                      <md-button layout="row" ng-click="" layout-align="end center" class="md-icon-button close-btn"  aria-label="Favorite" md-ink-ripple="#ffffff" ><md-icon class="material-icons md-light md-48 whiter"> remove </md-icon></md-button>
             </div>
@@ -21,45 +21,52 @@
     <!-- Panel pre-definido -->
     <!-- Agregar más controladores para cada tipo -->
     <div id="panel-content" layout="row">
-        
+
         <md-content>
             <md-tabs md-dynamic-height md-border-bottom>
-              <md-tab label="RAM">
+              <md-tab label="Procesos">
                 <md-content class="md-padding">
                   <h1 class="md-display-2 titled">Procesos</h1>
                    <md-divider ></md-divider>
-                  <p class="description-text">Listado de los procesos y sus estados - Todos estos procesos son obtenidos de las ventanas que son abiertas.  </p>
-                  <div ng-repeat="programs in myData.programas" >
+                  <p class="description-text">Listado de los procesos y sus estados - Todos estos procesos son obtenidos de las ventanas que son abiertas.  </p><div ng-repeat="programs in myData.programas" >
                      <section class="container-process">
                        <div class="status-programs" ng-class="programs.stats"></div>
                         <div class="content">{{programs.nombre}} - Estado: <span class="status-indicator">{{programs.stats}}</span> - Memoria RAM: {{programs.mb}}mb - Quantum: {{programs.quantum}}s</div>
-                      </section> 
+                      </section>
                   </div>
                 </md-content>
               </md-tab>
-              <md-tab label="CPU">
+              <md-tab label="Ram">
                 <md-content class="md-padding">
-                  <img ng-src="public/img/computer/chip2.svg" class="img-panel" />
-                  <h1 class="md-display-2">Memoria RAM</h1>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum enim, vel tempor sapien arcu a tellus. Vivamus convallis sodales ante varius gravida. Curabitur a purus vel augue ultrices ultricies id a nisl. Nullam malesuada consequat diam, a facilisis tortor volutpat et. Sed urna dolor, aliquet vitae posuere vulputate, euismod ac lorem. Sed felis risus, pulvinar at interdum quis, vehicula sed odio. Phasellus in enim venenatis, iaculis tortor eu, bibendum ante. Donec ac tellus dictum neque volutpat blandit. Praesent efficitur faucibus risus, ac auctor purus porttitor vitae. Phasellus ornare dui nec orci posuere, nec luctus mauris semper.</p>
+                  <h1 class="md-display-2 titled">RAM</h1>
+                   <md-divider ></md-divider>
+                   <p class="description-text">Aqui se mostrara el consumo de la memoria ram realizado por los elementos activos y en espera del programa. La memoria de solo lectura se verá afectada.</p>
+                   <p class="description-text">Slots de memoria RAM: <span>{{ ramValue }} mb</span></p>
+                    <div class="inlined" ng-repeat="ramSlots in ramUse track by $index">
+                      <div class="circle-simple"
+                      >{{ramSlots}}</div>
+                    </div>
+                    <md-button class="md-raised md-primary ram-btn" ng-click="compactar()">Compactar</md-button>
+                    <md-button class="md-raised md-accent ram-btn">Swap In</md-button>
+                    <md-button class="md-raised md-accent ram-btn">Swap Out</md-button>
                 </md-content>
               </md-tab>
               <md-tab label="Disco">
                 <md-content class="md-padding">
-                  <img ng-src="public/img/computer/ssd.svg" class="img-panel" />
-                  <h1 class="md-display-2">Disco duro</h1>
-                  <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+                  <h1 class="md-display-2 titled">Disco duro</h1>
+                   <md-divider ></md-divider>
+                  <p class="description-text">Listado de los procesos y sus estados - Todos estos procesos son obtenidos de las ventanas que son abiertas.  </p>
                 </md-content>
               </md-tab>
               <md-tab label="Perifericos">
                 <md-content class="md-padding">
-                  <img ng-src="public/img/computer/mouse.svg" class="img-panel" />
-                  <h1 class="md-display-2">Perifericos</h1>
-                  <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+                  <h1 class="md-display-2 titled">Perifericos</h1>
+                   <md-divider ></md-divider>
+                  <p class="description-text">Listado de los procesos y sus estados - Todos estos procesos son obtenidos de las ventanas que son abiertas.  </p>
                 </md-content>
               </md-tab>
             </md-tabs>
         </md-content>
-     
+
     </div>
 </div>

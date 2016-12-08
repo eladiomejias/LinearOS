@@ -8,12 +8,12 @@ body, html{
     overflow-x: hidden;
     overflow-y: hidden;
     background: #4776E6; /* fallback for old browsers */
-    
+
     /* Color Gradient */
-    
+
    /* background: -webkit-linear-gradient(to left, #4776E6 , #8E54E9); /* Chrome 10-25, Safari 5.1-6 */
    /* background: linear-gradient(to left, #4776E6 , #8E54E9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
+
     /* Wallpaper */
     background: url("../img/mountain2.jpg");
     background-size: cover;
@@ -47,7 +47,7 @@ body{
    /* background: #0F1021; */
     height: 100%;
     min-width: 70px;
-    
+
 }
 
 #icon-menu .material-icons, .whiter{
@@ -82,7 +82,7 @@ body{
 
 .title-window-top{
   position: absolute;
-  height: 40px;  
+  height: 40px;
   width: 100%;
   background-color: rgb(36, 38, 40);
 }
@@ -105,7 +105,7 @@ body{
 }
 
 .title-window{
-    min-width: 150px; 
+    min-width: 150px;
     max-width: 300px;
     color: white;
 }
@@ -116,6 +116,7 @@ body{
 .window, .panel-control{
     width: 100%;
     height: 100%;
+
 }
 
 .panel{
@@ -314,7 +315,7 @@ body{
      top: 48%;
 
 }
- 
+
 #menu-container{
     width: 100%;
     height: 100%;
@@ -411,29 +412,29 @@ body{
 md-tabs md-tabs-wrapper{
    background: #2d2d2d !important;
  }
- 
+
  .md-tabs.md-default-theme .md-tab, md-tabs .md-tab{
    color: rgba(255,255,255,0.6) !important;
  }
- 
+
  md-tabs .md-tab.md-active{
    color: rgb(230, 234, 239) !important;
  }
- 
+
  .panel-control .ui-icon , .panel-control .ui-icon-gripsmall-diagonal-se{
    display: none !important;
  }
- 
+
  .panel-control .md-content{
    color: rgba(2555,2555,255,0.55);
     background-color: #f5f5f5;
  }
- 
+
  #after-this{
    position: absolute;
    top: 0; left: 0; width: 100%; height: 100%;
  }
- 
+
  .new-border{
    position: relative;
    height: 25px;
@@ -441,7 +442,7 @@ md-tabs md-tabs-wrapper{
    background: rgba(253, 253, 253, 0.67);
    width: 100%;
  }
- 
+
  .removed{
    display: inline;
    float: left;
@@ -453,11 +454,11 @@ md-tabs md-tabs-wrapper{
    cursor: pointer;
    transition: all 0.2s ease-in-out;
  }
- 
+
  .removed:hover{
      background: #E84A5F;
  }
- 
+
  .name-btn{
    min-width: 200px;
     text-transform: uppercase;
@@ -465,7 +466,7 @@ md-tabs md-tabs-wrapper{
     color: #777575;
     letter-spacing: 5px;
  }
- 
+
  .ui-widget-content {
     background: rgba(255, 255, 255, 0.7) !important;
     color: #333333;
@@ -509,23 +510,46 @@ md-tabs md-tabs-wrapper{
     font-size: 0.81em !important;
 }
 
-/* Clases dependiendo del status */
+/* Classes dependiendo del status */
 .activo{
-    background: #ADF7D1 !important;
-}
-
-.bloqueado{
     background: #10DDC2 !important;
 }
 
-.espera{
-    background: yellow !important;
+.bloqueado{
+    background: #FF5656 !important;
 }
 
-.block{
-    background: #F23557 !important;
+.espera{
+  background: yellow !important;
 }
 
 .status-indicator{
     text-transform: capitalize;
+}
+
+.circle-simple{
+  display:inline;
+  margin: 5px auto; text-align: center;
+  width: 40px;
+  height: 40px;
+  padding: 2px 5px;
+  background: #ececec;
+  font-size: 1em;
+}
+
+.inlined{
+  display: inline-block;
+  margin: 3px;
+}
+
+.ram-btn{
+  font-size: 11px !important;
+}
+
+.line-margin{
+  margin: 5px 0px;
+}
+
+.description-text span{
+  font-weight: bold !important;
 }
