@@ -70,12 +70,18 @@ app.controller('desktopController', function ($scope, $compile, $mdToast, static
         else
             $scope.classNamed = true;
     }
+    
+    
+   
+
 
 
     $scope.openProgram = function(nombreId, activeValue){
         // function to search the index
         var index = searchId(nombreId);
         var valor = verificar(index);
+        var nombre = $scope.myData.programas[index].nombre;
+        var myToast, estado;
 
         if(activeValue == false){
                 //console.log(nombreId);
@@ -112,16 +118,28 @@ app.controller('desktopController', function ($scope, $compile, $mdToast, static
 
                     // Inicializar si todo corrio perfecto
                     $scope.myData.programas[index].stats = "activo";
+                    
+                    // Toast Message
+                    myToast = $mdToast.simple().action('OK').position('top right');
+                    estado = $scope.myData.programas[index].stats;
+                    creatingToast(myToast, nombre, estado);
 
                 }else{
                   console.log("Interbloqueo");
                   $scope.myData.programas[index].stats = "espera";
                   var time = $scope.myData.programas[index].quantum * 1000;
+                  // Toast Message
+                  myToast = $mdToast.simple().action('OK').position('top right');
+                  estado = $scope.myData.programas[index].stats;
+                  creatingToast(myToast, nombre, estado);
+                  
                   setTimeout(function(){
-                    addToRam(index);
                     $scope.$apply(function (){
                       // Aplicando
                       $scope.myData.programas[index].stats = "bloqueado";
+                      myToast = $mdToast.simple().action('OK').position('top right');
+                      estado = $scope.myData.programas[index].stats;
+                      creatingToast(myToast, nombre, estado);
                       setTimeout(function(){
                         $scope.$apply(function (){
                           // Aplicandondo el apagado en 2 segundos despues del block
@@ -255,6 +273,14 @@ app.controller('desktopController', function ($scope, $compile, $mdToast, static
         $scope.ramUse[i] = compactado[i];
       }
     }
+    
+    creatingToast = function(myToast, nombre, estado){
+      let message = nombre+" está "+estado;
+      myToast.textContent(message);
+      $mdToast.show(myToast);
+    }
+    
 
-
+    
+    
 });
