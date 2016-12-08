@@ -274,10 +274,22 @@ app.controller('desktopController', function ($scope, $compile, $mdToast, static
       }
     }
     
+    // when Toast is created
     creatingToast = function(myToast, nombre, estado){
-      let message = nombre+" está "+estado;
+      var message;
+      switch (estado) {
+        case 'espera':
+          message = nombre +" esta en "+estado;
+          break;
+        
+        default:
+          message = nombre+" está "+estado;
+      }
+      
       myToast.textContent(message);
       $mdToast.show(myToast);
+      
+
     }
     
 
