@@ -7,5 +7,6 @@
 - One view, multiple actions.
 - A fusion style from Chrome OS - Elementary - Mac OSX.
 - With process manager and realtime use.
-- Use with fullscreen (F5).
+- Use with fullscreen browser (F5).
 - UI & UX clear.
+- See the future, now.
