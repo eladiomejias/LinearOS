@@ -128,6 +128,7 @@ app.controller('desktopController', function ($scope, $compile, $mdToast, static
                   console.log("Interbloqueo");
                   $scope.myData.programas[index].stats = "espera";
                   var time = $scope.myData.programas[index].quantum * 1000;
+                  addToRam(index);
                   // Toast Message
                   myToast = $mdToast.simple().action('OK').position('top right');
                   estado = $scope.myData.programas[index].stats;
@@ -143,6 +144,7 @@ app.controller('desktopController', function ($scope, $compile, $mdToast, static
                       setTimeout(function(){
                         $scope.$apply(function (){
                           // Aplicandondo el apagado en 2 segundos despues del block
+                          deletefromRam(index);
                           $scope.myData.programas[index].stats = "apg";
                         });
                       }, 2000);
