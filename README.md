@@ -5,4 +5,5 @@
 
 - Made with Angular Material.
 - One view, multiple actions.
-- 
+- A fusion style from Chrome OS - Elementary - Mac OSX.
+- With process manager and realtime use.
