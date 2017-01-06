@@ -28,7 +28,7 @@
                 <md-content class="md-padding">
                   <h1 class="md-display-2 titled">Procesos</h1>
                    <md-divider ></md-divider>
-                  <p class="description-text">Listado de los procesos y sus estados - Todos estos procesos son obtenidos de las ventanas que son abiertas.  </p><div ng-repeat="programs in myData.programas" >
+                  <p class="description-text">Listado de los procesos y sus estados - Todos estos procesos son obtenidos de los programas que son abiertos.</p><div ng-repeat="programs in myData.programas" >
                      <section class="container-process">
                        <div class="status-programs" ng-class="programs.stats"></div>
                         <div class="content">{{programs.nombre}} - Estado: <span class="status-indicator">{{programs.stats}}</span> - Memoria RAM: {{programs.mb}}mb - Quantum: {{programs.quantum}}s</div>
@@ -40,7 +40,7 @@
                 <md-content class="md-padding">
                   <h1 class="md-display-2 titled">RAM</h1>
                    <md-divider ></md-divider>
-                   <p class="description-text">Aqui se mostrara el consumo de la memoria ram realizado por los elementos activos y en espera del programa. La memoria de solo lectura se verá afectada.</p>
+                   <p class="description-text">Aqui se mostrara el consumo de la memoria ram realizado por los elementos activos y en espera del programa. La memoria de solo lectura se verá afectada mediante las aplicaciones en ejecución y espera.</p>
                    <p class="description-text">Slots de memoria RAM: <span>{{ ramValue }} mb</span></p>
                     <div class="inlined" ng-repeat="ramSlots in ramUse track by $index">
                       <div class="circle-simple"
@@ -62,7 +62,7 @@
                 <md-content class="md-padding">
                   <h1 class="md-display-2 titled">Disco duro</h1>
                    <md-divider ></md-divider>
-                  <p class="description-text">Capacidad en uso del disco duro, se refleja el uso actual y su espacio usado por los programas abiertos. El manejo del disco está vinculado a la interacción con los programas. </p>
+                  <p class="description-text">Capacidad en uso del disco duro, se refleja el uso actual y su espacio usado por los programas abiertos. El manejo del disco está vinculado a la interacción con los programas, si el disco se llenará se avisará al usuario. </p>
                 </md-content>
               </md-tab>
               <md-tab label="Perifericos">
