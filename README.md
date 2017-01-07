@@ -41,5 +41,6 @@ All the software info.
 
 Images from Dribbble users. Thanks!
 Hope you like it.
+Created by: Eladio Mejias.
 
 
