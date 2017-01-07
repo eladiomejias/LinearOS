@@ -16,7 +16,7 @@
 
 ## What is it?
 
-This is a OS simulator, you can view, edit, manage, open, close programs and functionalities. This is inspired
+This is a OS simulator, you can view, edit, manage, open, close programs and functionalities. This is inspired in Chrome OS and Mac OSX.
 
 ### How to use?
 
