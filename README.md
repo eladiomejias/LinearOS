@@ -27,15 +27,20 @@ All the software info.
 
 ### Programming
 
+Technologies as CSS3, HTML, Javascript, Json file.
 
 ### UI Interface
 
+Google Material Design UI made with Angular Material.
 
 ### Programs
+
+All programs are images append.
 
 
 ### Control Panel
 
+The control panel manage the programs and their use in the OS
 
 ## Credits
 
