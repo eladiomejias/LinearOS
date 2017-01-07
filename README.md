@@ -16,7 +16,7 @@
 
 ## What is it?
 
-This is a OS simulator, you can view, edit, manage, open, close programs and functionalities.
+This is a OS simulator, you can view, edit, manage, open, close programs and functionalities. This is inspired
 
 ### How to use?
 
