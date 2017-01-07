@@ -23,7 +23,7 @@
 
 ## Software documentation
 
-Here are the software information.
+All the software info.
 
 ### Programming
 
@@ -39,9 +39,7 @@ Here are the software information.
 
 ## Credits
 
-Images from Dribbble users. Thanks for them!
-
-### Any question make me know!
-
+Images from Dribbble users. Thanks!
+Hope you like it.
 
 
