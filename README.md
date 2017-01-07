@@ -3,7 +3,7 @@
 
 ## A material design OS simulator. Made with Angular JS.
 
-![alt tag](https://github.com/eladiomejias/LinearOS/commit/95dc9c7af169b8ba6522ce7565e2b03575420a0f#diff-9b377696211b59881bdeb89433729107)
+![alt tag](https://raw.githubusercontent.com/eladiomejias/LinearOS/95dc9c7af169b8ba6522ce7565e2b03575420a0f/public/css/images/Wallp.png?token=AOKf00CyBz_EgYSca6XTveHHly2GMhhKks5Yeab1wA%3D%3D)
 
 - Made with Angular Material.
 - One view, multiple actions.
