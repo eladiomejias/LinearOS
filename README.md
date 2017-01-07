@@ -11,9 +11,12 @@
 - With process manager and realtime use.
 - Use with fullscreen browser (F5).
 - UI & UX clear.
-- See the future, now.
 - Using NPM.
 
+
+## What is it?
+
+This is a OS simulator, you can view, edit, manage, open, close programs and functionalities.
 
 ### How to use?
 
@@ -27,7 +30,7 @@ All the software info.
 
 ### Programming
 
-Technologies as CSS3, HTML, Javascript, Json file.
+Technologies as CSS3, HTML, Javascript, Json file, NPM.
 
 ### UI Interface
 
