@@ -1,4 +1,4 @@
-![alt tag](https://raw.githubusercontent.com/eladiomejias/LinearOS/master/public/css/images/Logo.png?token=AOKf0yY-m0qO6TuDx58yEpmZIq6sih5sks5Yd64hwA%3D%3D)
+![alt tag](http://oi68.tinypic.com/rancsj.jpg)
 # Linear OS
 
 ## A material design OS simulator. Made with Angular JS 1.x.
