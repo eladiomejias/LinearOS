@@ -50,7 +50,7 @@ The control panel manage the programs and their use in the OS
 
 ## Credits
 
-Images from Dribbble users. Thanks!
+Images of programs are from Dribbble users. Thanks!
 Hope you like it.
 Created by: Eladio Mejias.
 
