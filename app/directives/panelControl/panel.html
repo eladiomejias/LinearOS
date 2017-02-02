@@ -26,7 +26,7 @@
             <md-tabs md-dynamic-height md-border-bottom>
               <md-tab label="Procesos">
                 <md-content class="md-padding">
-                  <h1 class="md-display-2 titled">Procesos</h1>
+                  <h1 class="md-display-2 titled">Procesos ejecutados</h1>
                    <md-divider ></md-divider>
                   <p class="description-text">Listado de los procesos y sus estados - Todos estos procesos son obtenidos de los programas que son abiertos.</p><div ng-repeat="programs in myData.programas" >
                      <section class="container-process">
@@ -40,27 +40,57 @@
                 <md-content class="md-padding">
                   <h1 class="md-display-2 titled">RAM</h1>
                    <md-divider ></md-divider>
-                   <p class="description-text">Aqui se mostrara el consumo de la memoria ram realizado por los elementos activos y en espera del programa. La memoria de solo lectura se verá afectada mediante las aplicaciones en ejecución y espera.</p>
+                   <p class="description-text">Aqui se mostrara el consumo de la memoria ram realizado por los elementos activos y en espera del programa. La memoria de solo lectura se verá afectada también por la memoria secundaria y el swap in / out. Cada slot de memoria corresponde a 1MB.</p>
                    <p class="description-text">Slots de memoria RAM: <span>{{ ramValue }} mb</span></p>
                     <div class="inlined" ng-repeat="ramSlots in ramUse track by $index">
                       <div class="circle-simple"
                       >{{ramSlots}}</div>
                     </div>
-
+                    <div layout="row" layout-align="center center">
+                    <md-button class="md-raised md-primary ram-btn" ng-click="compactar()">Compactar</md-button>
+                    </div>
+                    <p class="description-text">Slots de memoria secundaria: <span>{{ secMemory }} mb</span></p>
+                    <div class="inlined" ng-repeat="ramSlotsSec in secMem track by $index">
+                      <div class="circle-simple"
+                      >{{ramSlotsSec}}</div>
+                    </div>
                 </md-content>
+                
               </md-tab>
               <md-tab label="Disco">
                 <md-content class="md-padding">
-                  <h1 class="md-display-2 titled">Disco duro</h1>
+                  <h1 class="md-display-2 titled">Planificacion del disco duro</h1>
                    <md-divider ></md-divider>
                   <p class="description-text">Capacidad en uso del disco duro, se refleja el uso actual y su espacio usado por los programas abiertos. El manejo del disco está vinculado a la interacción con los programas, si el disco se llenará se avisará al usuario. </p>
                 </md-content>
-              </md-tab>
-              <md-tab label="Perifericos">
-                <md-content class="md-padding">
-                  <h1 class="md-display-2 titled">Perifericos</h1>
-                   <md-divider ></md-divider>
-                  <p class="description-text">Listado de los perifericos y sus estados - Este contenido abarca los puertos usados por las aplicaciones y su disponibilidad.</p>
+                <md-progress-linear md-mode="determinate" value="{{ spaceUsed }}"></md-progress-linear>
+                <div layout="row" layout-align="center center">
+                    <h4>( {{ spaceUsed }} % ) {{ cantMB }} - {{ myData.maquina.disco.MB }} MB</h4>
+                </div>
+                <md-content class="md-padding" id="planificacionDisco">
+                    
+                <div layout="row" layout-align="center center">
+                  <h1 class="md-display-2 titled">Metodos de planificacion</h1>
+                </div>
+                
+                <md-divider ></md-divider>
+                
+                <div layout="row" class="space" layout-align="center center">
+                    <md-button class="md-raised" ng-click="planFCFS()">fcfs</md-button>
+                    <md-button class="md-raised" ng-click="planSCAN()">scan</md-button>
+                </div>
+                
+                <div ng-show="fcfsHide"> 
+                     <h3>FCFS</h3>
+                     <div class="inlined" ng-repeat="FCFS in randomProcess track by $index">
+                      <div class="circle-simple">{{ FCFS }}</div>
+                     </div>
+                </div>
+                
+                <div ng-show="scanHide">
+                    <h3>SCAN</h3>
+                </div>
+                
                 </md-content>
               </md-tab>
             </md-tabs>

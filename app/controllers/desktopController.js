@@ -2,26 +2,35 @@ var app = angular.module("myApp");
 
 // Basic controller for the aplication
 app.controller('desktopController', function ($scope, $compile, $mdToast, staticData){
-    // Variables from System Information
-      //demo scopes
-      $scope.hello = "Linear OS";
-      // fecha del programa
+  
+      // Variables de informacion del sistema
+      // Fecha del programa
       $scope.date = new Date();
-      //animation scope
+      // Animation scope
       $scope.animation = false;
       $scope.menuAnimation = false;
-      // sized window
+      // Sized window
       $scope.classNamed = false;
 
-    // Variables from system data
-      // init the data json $scope
+      // Variables del Sistema
+      // Init the Data json $scope
       $scope.myData;
-      //Code for program open
+      // Code for program open
       var add = "-program";
-      //var for deadlock
+      // Variable for deadlock
       $scope.inProcess = [];
-      //scope for ram
-      //$scope.ramUse = [];
+      // Variable de posicionamiento random
+      $scope.randomProcess = [];
+      // Planificacion FCFS
+      $scope.FCFS = [];
+      // Planificacion SCAN
+      $scope.planSCAN = [];
+      
+      $scope.spaceUsed;
+      $scope.cantMB = 0;
+      
+      $scope.fcfsHide = false;
+      $scope.scanHide = false;
 
 
     // Getting data to $scope
@@ -30,13 +39,15 @@ app.controller('desktopController', function ($scope, $compile, $mdToast, static
 
         $scope.myData = theData;
         console.log($scope.myData);
-        // Init RAM values
+        // Init RAM values - Primary and Secondary
         $scope.ramValue = $scope.myData.maquina.RAM.MB;
         $scope.ramUse = new Array ($scope.ramValue);
+        $scope.secMemory = $scope.myData.maquina.RAM.secMemory;
+        $scope.secMem = new Array ($scope.secMemory);
         initRAM($scope.ramUse);
-
-
-
+        initRAM($scope.secMem);
+        planificacionDisco();
+        calcEspacio();
 
     }).error(function(error){
 
@@ -45,7 +56,7 @@ app.controller('desktopController', function ($scope, $compile, $mdToast, static
     });
 
 
-    // Init the RAM with 0
+    // Init the memory with 0
     function initRAM(ram){
       for (var i = 0; i < ram.length; i++) {
         ram[i] = 0;
@@ -71,21 +82,16 @@ app.controller('desktopController', function ($scope, $compile, $mdToast, static
             $scope.classNamed = true;
     }
     
-    
-   
-
-
-
     $scope.openProgram = function(nombreId, activeValue){
         // function to search the index
         var index = searchId(nombreId);
-        var valor = verificar(index);
         var nombre = $scope.myData.programas[index].nombre;
         var myToast, estado;
-
         if(activeValue == false){
-                //console.log(nombreId);
-
+              //console.log(nombreId);
+              if(ramSpace(index)){
+                console.log(ramSpace(index))
+                var valor = verificar(index);
                 if(valor && $scope.myData.programas[index].stats != "bloqueado"){
 
                     // my created id
@@ -110,10 +116,10 @@ app.controller('desktopController', function ($scope, $compile, $mdToast, static
                     +"</div></div>"+"<window ng-click=\'hi()\' nombre=\'myData.programas["+index+"].nombre\' bg=\'myData.programas["+index+"].bgLink\' myid=\'myData.programas["+index+"].id\'></window>")($scope);
                     angular.element(thing).append(el);
 
-
                     $("#"+nombreId).addClass("active-icon");
                     $scope.myData.programas[index].active = true;
-
+                    
+                    // Se agrega a la ram el elemento
                     addToRam(index);
 
                     // Inicializar si todo corrio perfecto
@@ -129,21 +135,21 @@ app.controller('desktopController', function ($scope, $compile, $mdToast, static
                   $scope.myData.programas[index].stats = "espera";
                   var time = $scope.myData.programas[index].quantum * 1000;
                   addToRam(index);
-                  // Toast Message
+                  // Toast Message - when open program
                   myToast = $mdToast.simple().action('OK').position('top right');
                   estado = $scope.myData.programas[index].stats;
                   creatingToast(myToast, nombre, estado);
                   
                   setTimeout(function(){
                     $scope.$apply(function (){
-                      // Aplicando
+                      // Block state apply
                       $scope.myData.programas[index].stats = "bloqueado";
                       myToast = $mdToast.simple().action('OK').position('top right');
                       estado = $scope.myData.programas[index].stats;
                       creatingToast(myToast, nombre, estado);
                       setTimeout(function(){
                         $scope.$apply(function (){
-                          // Aplicandondo el apagado en 2 segundos despues del block
+                          // Aplicandondo el off state en 2 segundos despues del block state
                           deletefromRam(index);
                           $scope.myData.programas[index].stats = "apg";
                         });
@@ -152,20 +158,23 @@ app.controller('desktopController', function ($scope, $compile, $mdToast, static
                   }, time);
                 }
 
+              }else{
+                console.log("Programa en cola secundaria");
+                swapIn(index); 
+                myToast = $mdToast.simple().action('OK').position('top right');
+                creatingToast(myToast, nombre, "swapIn");
+              } 
+              
         }else{
             console.log("Error this program is open. Please choose another program.");
         }
     }
 
-    // Verifica si el programa no produce un interbloqueo
+    // Verificar el interbloqueo / inanicion de un programa abierto.
     function verificar(index){
-    var programa =   $scope.myData.programas[index].req;
+    var programa = $scope.myData.programas[index].req;
     var band = true;
-    if($scope.inProcess.length == 0){
-      programa.forEach(function (item, index){
-
-      });
-    }else{
+    if($scope.inProcess.length != 0){
       $scope.inProcess.forEach( function(reqItem, reqIndex ){
       //  console.log("Ocurre ", reqItem );
         programa.forEach(function (item, index){
@@ -183,10 +192,31 @@ app.controller('desktopController', function ($scope, $compile, $mdToast, static
     }
 
     return band;
-
   }
+  
+  function random(){
+    var max = 1000, 
+    min = 1,
+    number = 0, temp = $scope.randomProcess;
+    number = (Math.random() * (max - min)) + min;
+    number = Math.floor(number);
+    temp.push(number);
+    return temp;
+  }
+  
+   // Verify the ram space avalaible
+    function ramSpace(index){
+      var programa_mb = $scope.myData.programas[index].mb;
+      conta = 0;
+      $scope.ramUse.forEach( function(item, index ){
+        if(item == 0){
+          conta++;
+        }
+      });
+      if(programa_mb <= conta){ return true; }else{ return false; }
+    }
 
-    // function to look who is the index of the program that will be open
+    // Function to look who is the index of the program that will be open
     function searchId(nombreId){
 
         var tam = $scope.myData.programas.length;
@@ -199,26 +229,96 @@ app.controller('desktopController', function ($scope, $compile, $mdToast, static
         }
 
         return index;
-
     }
 
+   // Function for the close event of program
    $scope.closeProgram = function(index){
-        // enter in the close programs
+        // Enter in the close programs
        console.log("Borrar programa");
        var search = $scope.myData.programas[index].id;
        var searchIndexProgram = search;
        searchIndexProgram += add;
-       // calls this
+       // Calls this
        $("#"+searchIndexProgram).remove();
-       // remove class
+       // Remove class
        $("#"+search).removeClass("active-icon");
-       // it's no longer act
-       // so we change the scope value
+       // It's no longer act
+       // So we change the scope value
        $scope.myData.programas[index].active = false;
        $scope.myData.programas[index].stats = "apg";
+       // Elimina de la memoria principal el programa
        deletefromRam(index);
+       // Remueve el programa de la UI
        removing(index);
+        // Intenta un Swap Out del primer elemento
+        swapOut(index);
     }
+    
+      // When program is deleted, after this will be swaput programs
+    function swapOut(index){
+      var cont = 0, conta2 = 0;
+      var second = $scope.secMem[0];
+
+      if(second == 0){
+        
+        return;
+        
+      }else{
+        var second_id = second - 1;
+        var programName = $scope.myData.programas[second_id].id;
+        var cont = 0;
+        $scope.secMem.forEach( function(item, index ){
+          if(item == second_id + 1){
+            cont++;
+            console.log(item);
+         }
+         });
+        
+         $scope.ramUse.forEach( function(item, index ){
+           if(item == 0){
+            conta2++;
+           }
+          });
+        
+        console.log(cont+" "+conta2);
+        if(cont <= conta2){ 
+          // Pushing to the RAM
+          $scope.openProgram(programName, false);
+          cleaning(second);
+          compact_second();
+        }
+        
+      }
+    }
+    
+    // Limpia los elementos que salen del Swap.
+    function cleaning(num){
+      for (var i = 0; i < $scope.secMem.length; i++) {
+        if($scope.secMem[i] == num){
+          $scope.secMem[i] = 0;
+        }
+      }
+    }
+    
+    // Function to compact the second memory without problems.
+    function compact_second(){
+      // Cortar array con jquery
+      let removeItem = 0;
+      var y = $scope.secMem;
+      y = jQuery.grep(y, function(value) {
+       return value != removeItem;
+      });
+      // Calc of length
+      var rest = $scope.secMemory - y.length;
+      console.log(y);
+      // Aux array
+      var aux = new Array (rest);
+      initRAM(aux);
+      // Concat array of 0 with array with nums
+      $scope.secMem = y.concat(aux);
+      
+    }
+    
 
     function removing(index){
       var valoresEliminar = $scope.myData.programas[index].req;
@@ -226,10 +326,16 @@ app.controller('desktopController', function ($scope, $compile, $mdToast, static
       valoresTotales = valoresTotales.filter(item => valoresEliminar.indexOf(item) == -1);
       $scope.inProcess = valoresTotales;
     }
+    
+    function removingTwo(toRemove, baseArray){
+      var valoresEliminar = toRemove;
+      var valoresTotales = baseArray;
+      valoresTotales = valoresTotales.filter(item => valoresEliminar.indexOf(item) == -1);
+      return valoresTotales;
+    }
 
     // When program is added, now is added to RAM
     function addToRam(index){
-      console.log("Entro");
       var ramProgram = $scope.myData.programas[index].mb;
       var aux = ramProgram;
       for (var i = 0; i < $scope.ramUse.length; i++) {
@@ -242,7 +348,22 @@ app.controller('desktopController', function ($scope, $compile, $mdToast, static
       }
 
     }
-
+  
+    // When program cannot be added, is added to secondary memory
+    function swapIn(index){
+      var ramProgram = $scope.myData.programas[index].mb;
+      var aux = ramProgram;
+      for (var i = 0; i < $scope.secMem.length; i++) {
+        if(aux != 0 && $scope.secMem[i] == 0){
+          $scope.secMem[i] = index + 1;
+          aux--;
+        }else if(aux == 0){
+          break;
+        }
+      } 
+    }
+    
+    
     // When program is deleted, now is deleted from RAM
     function deletefromRam(index){
       var ramProgram = $scope.myData.programas[index].mb;
@@ -256,8 +377,9 @@ app.controller('desktopController', function ($scope, $compile, $mdToast, static
         }
       }
     }
+    
 
-    // Compactacion
+    // Compactacion de memoria RAM.
     $scope.compactar = function(){
       var compactado = [];
 
@@ -278,12 +400,17 @@ app.controller('desktopController', function ($scope, $compile, $mdToast, static
     
     // when Toast is created
     creatingToast = function(myToast, nombre, estado){
+      
       var message;
       switch (estado) {
         case 'espera':
           message = nombre +" esta en "+estado;
           break;
         
+        case 'swapIn':
+           message = "Swap In de "+nombre;
+          break;
+          
         default:
           message = nombre+" está "+estado;
       }
@@ -291,10 +418,78 @@ app.controller('desktopController', function ($scope, $compile, $mdToast, static
       myToast.textContent(message);
       $mdToast.show(myToast);
       
-
     }
     
+    function planificacionDisco(){
+      //Crea su posicion en memoria
+      for(var i = 0; i<$scope.myData.programas.length; i++){
+        $scope.randomProcess = random();
+      }
+    }
+    
+    // Calcular espacio restante del disco
+    function calcEspacio(){
+      var array = $scope.myData.programas;
 
+      for (var i = 0; i < $scope.myData.programas.length; i++) {
+          $scope.cantMB = $scope.myData.programas[i].mb + $scope.cantMB;
+      }
+      
+      $scope.spaceUsed = Math.floor(($scope.cantMB/$scope.myData.maquina.disco.MB) * 100);
+      
+    }
+    
+    
+    $scope.planFCFS = function (){
+      $scope.fcfsHide = !$scope.fcfsHide;
+      $scope.FCFS == $scope.randomProcess;
+    }
+
+    $scope.planSCAN = function(){
+      var dir = Math.round(Math.random()), min = 0, max = 0, random = 0;
+      
+      if($scope.randomProcess.length > 4){ 
+        max = Math.max.apply(null, $scope.randomProcess);
+        posRan = Math.floor((Math.random() * $scope.randomProcess.length) + 0);
+        random = Math.floor((Math.random() * max) + min);
+      }
+      var aux = $scope.randomProcess;
+      var pivote = aux[posRan];
+      var pivoteIndex = aux.indexOf(pivote)
+      var bottomArray = aux.splice(0, pivoteIndex);
+      var topArray = removingTwo(bottomArray, aux);
+      
+      // Concat for posible bug
+      $scope.randomProcess = bottomArray.concat(topArray);
+      
+      
+      // ECMA 6 Script
+      topArray = topArray.filter(item => item !== pivote);
+      
+     /* console.log(pivote);
+      console.log(bottomArray);
+      console.log(topArray); */
+      
+      // Llamada a funcion de reocrrido
+      recorrido(topArray, bottomArray, dir);
+      
+    }
+    
+    function recorrido(top, bottom, direccion, pivote){
+      if(direccion == 1){
+        recorridoPositivo(top, bottom, pivote, direccion);
+      }else{
+        recorridoNegativo(top, bottom, pivote, direccion);
+      }
+    }
+    
+    // Ejecuta cuando el recorrido es positivo (+)
+    function recorridoPositivo(top, bottom, pivote, path){
+      
+    }
+    
+    
+    
     
     
 });

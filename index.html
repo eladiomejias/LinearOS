@@ -39,11 +39,12 @@
           <!-- Flex del espacio restante / afectado con min-width -->
           <div flex id="bar-right" layout="row" layout-align="center center">
             <div class="container-icon md-whiteframe-2dp" flex="100" layout="row" layout-align="">
-                <div id="time" class="whiter" flex="30" layout-align="center center" layout="row"><span>{{ date | date: 'EEE / d hh:mm a'}}</span></div>
-                <md-button class="md-icon-button icon-desktop" ng-click="panelActivo = !panelActivo" ng-class="{ active: animations }" aria-label="Favorite" md-no-ink="true"><md-icon class="material-icons md-light md-48 whiter"> settings </md-icon></md-button>
-                <md-button class="md-icon-button icon-desktop " md-no-ink="true" aria-label="Favorite" md-ink-ripple="#FFF"><md-icon class="material-icons md-light md-48 whiter"> battery_full </md-icon></md-button>
+                <div id="time" class="whiter" flex="30" layout-align="center center" layout="row"><span>{{ date | date: 'EEE / d hh:mm a'}}</span><md-tooltip md-direction="top">Fecha - Hora</md-tooltip></md-button></div>
+                <md-button class="md-icon-button icon-desktop" ng-click="panelActivo = !panelActivo" ng-class="{ active: animations }" aria-label="Favorite" md-no-ink="true"><md-icon class="material-icons md-light md-48 whiter"> settings </md-icon><md-tooltip md-direction="top">Ajustes</md-tooltip></md-button></md-button>
+                <md-button class="md-icon-button icon-desktop " md-no-ink="true" aria-label="Favorite" md-ink-ripple="#FFF"><md-icon class="material-icons md-light md-48 whiter"> battery_full </md-icon><md-tooltip md-direction="top">Bateria</md-tooltip></md-button>
                 <div flex layout-align="center center" layout="row">
-                    <img src="./public/img/me.png" class="md-avatar" alt="Me" />
+                    <img src="./public/img/me.png" class="md-avatar" alt="profile-picture" />
+                    <md-tooltip md-direction="top">{{ myData.nombre }}</md-tooltip>
                     </div>
                     
             </div>

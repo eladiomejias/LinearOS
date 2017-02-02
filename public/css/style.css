@@ -136,10 +136,11 @@ body{
 /* when hiding the picture */
 .ng-hide-add         { animation:0.5s fadeOutRight ease; }
 
+#planificacionDisco .ng-hide-add { animation:0.2s fadeOut ease; }
+
+
 /* when showing the picture */
 .ng-hide-remove      { animation:0.5s fadeIn ease; }
-
-
 
 
 /* when hiding the menu */
@@ -259,7 +260,7 @@ body{
 
   to {
     opacity: 0;
-    transform: translate3d(100%, 0, 0);
+    transform: translate3d(10%, 0, 0);
   }
 }
 
@@ -481,27 +482,27 @@ md-tabs md-tabs-wrapper{
 }
 
 .status-programs{
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #ccc;
-    top: 50%;
-    transform: translate(0%, -50%);
-    position: absolute;
+     width: 10px;
+     height: 10px;
+     border-radius: 50%;
+     background: #ccc;
+     top: 50%;
+     transform: translate(0%, -50%);
+     position: absolute;
 }
 
 .content{
-        padding-left: 25px;
-    font-size: 0.8em;
+     padding-left: 25px;
+     font-size: 0.8em;
 }
 
 .container-process{
-    position: relative;
-    /* margin-bottom: 5px; */
-    border-bottom: 1px solid #e6e6e6;
-    transition: all 0.2s ease-in-out;
-    background: rgba(237, 237, 241, 0.4);
-    padding: 7px;
+     position: relative;
+     /* margin-bottom: 5px; */
+     border-bottom: 1px solid #e6e6e6;
+     transition: all 0.2s ease-in-out;
+     background: rgba(237, 237, 241, 0.4);
+     padding: 7px;
 }
 
 .container-process:hover{
@@ -509,50 +510,72 @@ md-tabs md-tabs-wrapper{
 }
 
 .description-text{
-    margin: 10px !important;
-    font-size: 0.81em !important;
+     margin: 10px !important;
+     font-size: 0.81em !important;
 }
 
 /* Classes dependiendo del status */
 .activo{
-    background: #10DDC2 !important;
+     background: #10DDC2 !important;
 }
 
 .bloqueado{
-    background: #FF5656 !important;
-}
+     background: #FF5656 !important;
+} 
 
 .espera{
-  background: yellow !important;
+      background: yellow !important;
 }
 
 .status-indicator{
-    text-transform: capitalize;
+     text-transform: capitalize;
 }
 
 .circle-simple{
-  display:inline;
+  /*display:inline;
   margin: 5px auto; text-align: center;
   width: 40px;
   height: 40px;
   padding: 2px 5px;
   background: #ececec;
-  font-size: 1em;
+  font-size: 1em;*/
+  
+  margin: 2px auto;
+  text-align: center;
+  width: 25px;
+  padding: 4px 8px;
+  background: #fff;
+  font-size: 1.1em;
+  box-shadow: 0 1px 4px rgba(0,0,0,.04);
+  border: 1px solid rgba(0,0,0,.09);
 }
 
 .inlined{
-  display: inline-block;
-  margin: 3px;
+      display: inline-block;
+      margin: 0px;
+    
 }
 
 .ram-btn{
-  font-size: 11px !important;
+      font-size: 11px !important;
 }
 
 .line-margin{
-  margin: 5px 0px;
+      margin: 5px 0px;
 }
 
 .description-text span{
-  font-weight: bold !important;
+      font-weight: bold !important;
+}
+
+md-progress-linear .md-container {
+    background-color: #eaeaea !important;
+}
+
+md-progress-linear.md-default-theme .md-bar, md-progress-linear .md-bar {
+    background-color: #2196F3 !important;
+}
+
+.space{
+    margin: 10px 0px;
 }
