@@ -31,6 +31,9 @@ app.controller('desktopController', function ($scope, $compile, $mdToast, static
       
       $scope.fcfsHide = false;
       $scope.scanHide = false;
+      
+      $scope.pivot;
+      $scope.sentido = "";
 
 
     // Getting data to $scope
@@ -444,15 +447,17 @@ app.controller('desktopController', function ($scope, $compile, $mdToast, static
       $scope.fcfsHide = !$scope.fcfsHide;
       $scope.FCFS == $scope.randomProcess;
     }
+    
 
-    $scope.planSCAN = function(){
+    $scope.SCAN = function(){
+      $scope.scanHide = !$scope.scanHide;
       var dir = Math.round(Math.random()), min = 0, max = 0, random = 0;
+      // Edit
+      dir = 1;
+      max = Math.max.apply(null, $scope.randomProcess);
+      posRan = Math.floor((Math.random() * $scope.randomProcess.length) + 0);
+      random = Math.floor((Math.random() * max) + min);
       
-      if($scope.randomProcess.length > 4){ 
-        max = Math.max.apply(null, $scope.randomProcess);
-        posRan = Math.floor((Math.random() * $scope.randomProcess.length) + 0);
-        random = Math.floor((Math.random() * max) + min);
-      }
       var aux = $scope.randomProcess;
       var pivote = aux[posRan];
       var pivoteIndex = aux.indexOf(pivote)
@@ -462,34 +467,152 @@ app.controller('desktopController', function ($scope, $compile, $mdToast, static
       // Concat for posible bug
       $scope.randomProcess = bottomArray.concat(topArray);
       
-      
       // ECMA 6 Script
       topArray = topArray.filter(item => item !== pivote);
       
-     /* console.log(pivote);
-      console.log(bottomArray);
-      console.log(topArray); */
+      $scope.pivo = pivote;
+      
+      if(dir == 1){
+        $scope.sentido = "+";
+      }else{
+         $scope.sentido = "-";
+      }
       
       // Llamada a funcion de reocrrido
-      recorrido(topArray, bottomArray, dir);
+      recorrido(topArray, bottomArray, dir, pivote);
       
     }
     
     function recorrido(top, bottom, direccion, pivote){
       if(direccion == 1){
-        recorridoPositivo(top, bottom, pivote, direccion);
+        recorridoPositivo(top, bottom, direccion, pivote);
       }else{
-        recorridoNegativo(top, bottom, pivote, direccion);
+        //recorridoNegativo(top, bottom, direccion, pivote);
       }
     }
     
     // Ejecuta cuando el recorrido es positivo (+)
-    function recorridoPositivo(top, bottom, pivote, path){
+    function recorridoPositivo(top, bottom, direccion, pivote){
+      
+      // Concatenando por posible bug el arreglo.
+      var theCopy = bottom.concat(top);
+      var arregloFinal = [];
+      theCopy.push(pivote);
+      theCopy =  quickSort(theCopy);
+      var forTop = theCopy;
+      var index = forTop.indexOf(pivote);
+      
+      // Variables ordenadas.
+      var botttom = forTop.slice(0, index);
+      var toppo = removingTwo(botttom, theCopy);
+      
+      // ECMA 6 Script
+      toppo = toppo.filter(item => item !== pivote);
+      //console.log("El pivote es: "+pivote);
+      // Pushing values to the final array.
+      arregloFinal.push(pivote);
+      arregloFinal = recorridoSuperior(arregloFinal, toppo);
+      console.log("--");
+      arregloFinal = recorridoInferior(arregloFinal, botttom);
+      
+      arregloFinal = cleanArray(arregloFinal);
+      $scope.planSCAN = arregloFinal;
+      console.log("El arreglo final es "+arregloFinal);
+    }
+    
+    function recorridoNegativo(){
+      
+    }
+    
+    // Recorre el arreglo de manera ascendente
+    function recorridoSuperior(baseArray, top){
+      for(var i = 0; i <= top.length; i++ ){
+        baseArray.push(top[i]);
+        console.log(top[i]);
+      }
+      return baseArray;
+    }
+    
+    // Recorre el arreglo de manera descendente
+    function recorridoInferior(baseArray, bottom){
+      for(var i = bottom.length; i>=0; i--){
+        baseArray.push(bottom[i]);
+        console.log(bottom[i]);
+      }
+      return baseArray;
       
     }
     
     
+    // Quicksort method
+    function quickSort(items, left, right) {
+
+    var index;
+
+    if (items.length > 1) {
+
+        left = typeof left != "number" ? 0 : left;
+        right = typeof right != "number" ? items.length - 1 : right;
+
+        index = partition(items, left, right);
+
+        if (left < index - 1) {
+            quickSort(items, left, index - 1);
+        }
+
+        if (index < right) {
+            quickSort(items, index, right);
+        }
+
+    }
+
+     return items;
+    }
     
+    
+    function partition(items, left, right) {
+
+    var pivot   = items[Math.floor((right + left) / 2)],
+        i       = left,
+        j       = right;
+
+
+    while (i <= j) {
+
+        while (items[i] < pivot) {
+            i++;
+        }
+
+        while (items[j] > pivot) {
+            j--;
+        }
+
+        if (i <= j) {
+            swap(items, i, j);
+            i++;
+            j--;
+        }
+    }
+
+    return i;
+  }
+
+    function swap(items, firstIndex, secondIndex){
+    var temp = items[firstIndex];
+    items[firstIndex] = items[secondIndex];
+    items[secondIndex] = temp;
+  }
+  
+ function cleanArray(actual) {
+    var newArray = new Array();
+    for (var i = 0; i < actual.length; i++) {
+      if (actual[i]) {
+        newArray.push(actual[i]);
+      }
+    }
+    return newArray;
+  }
+      
     
     
 });

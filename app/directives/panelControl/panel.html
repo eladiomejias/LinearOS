@@ -77,7 +77,7 @@
                 
                 <div layout="row" class="space" layout-align="center center">
                     <md-button class="md-raised" ng-click="planFCFS()">fcfs</md-button>
-                    <md-button class="md-raised" ng-click="planSCAN()">scan</md-button>
+                    <md-button class="md-raised" ng-click="SCAN()">scan</md-button>
                 </div>
                 
                 <div ng-show="fcfsHide"> 
@@ -89,6 +89,11 @@
                 
                 <div ng-show="scanHide">
                     <h3>SCAN</h3>
+                    <h5>Pivote: {{ pivo }}</h5>
+                    <h5>Sentido: {{ sentido }}</h5>
+                    <div class="inlined" ng-repeat="SCAN in planSCAN track by $index">
+                      <div class="circle-simple">{{ SCAN }}</div>
+                     </div>
                 </div>
                 
                 </md-content>
