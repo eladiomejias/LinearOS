@@ -5,13 +5,13 @@
 
 ![alt tag](http://oi68.tinypic.com/2dhi3rk.jpg)
 
-- Made with Angular Material.
+- Made with Angular Material 1.x.
 - One view, multiple actions.
 - A fusion style from Chrome OS - Elementary - Mac OSX.
-- With process manager and realtime use.
-- Use with fullscreen browser (F5).
-- UI & UX clear.
-- Using NPM.
+- This app contain a realtime process manager for the elements.
+- Use with fullscreen browser (F5) to better experience.
+- Clear UI & UX based on Google's Material Design.
+- We are using npm packages.
 
 
 ## What is it?
@@ -21,11 +21,12 @@ The UX is clear and simple.
 Entertain with this web app.
 We use Angular JS Framework!
 
-### How to use?
+### How to use? 
 
-- Clone the repository
-- NPM install
-- Enjoy.
+- clone the repository to your computer
+- npm install 
+- run a HTTP Web Server with CORS Enabled - Example: Web Server for Chrome 
+- enjoy and learn about Computer Management.
 
 ## Software documentation
 
