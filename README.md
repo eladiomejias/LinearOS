@@ -1,9 +1,9 @@
-![alt tag](http://oi68.tinypic.com/rancsj.jpg)
+![alt tag](https://github.com/eladiomejias/LinearOS/blob/master/public/img/front/LinearOS.png)
 # Linear OS
 
 ## A material design OS simulator. Made with Angular JS 1.x.
 
-![alt tag](http://oi68.tinypic.com/2dhi3rk.jpg)
+![alt tag](https://github.com/eladiomejias/LinearOS/blob/master/public/img/front/LinearOS2.png)
 
 - Made with Angular Material 1.x.
 - One view, multiple actions.
