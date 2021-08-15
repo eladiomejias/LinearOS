@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/cd0139ad-de95-4cfb-8f49-d2cbd85fa2aa/deploy-status)](https://app.netlify.com/sites/linear-os/deploys)
+
 ![alt tag](https://github.com/eladiomejias/LinearOS/blob/master/public/img/front/LinearOS.png)
 # Linear OS
 
